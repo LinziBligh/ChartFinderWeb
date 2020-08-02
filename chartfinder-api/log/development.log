@@ -26,3 +26,49 @@ Migrating to CreateCharts (20200802142523)
   [1m[36mChart Create (3.2ms)[0m  [1m[32mINSERT INTO "charts" ("date", "country", "songs", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["date", "1984"], ["country", "UK"], ["songs", "[\"Vengabus\", \"Cha Cha Cha\"]"], ["created_at", "2020-08-02 14:31:16.527273"], ["updated_at", "2020-08-02 14:31:16.527273"]]
   [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
   [1m[36mChart Load (0.4ms)[0m  [1m[34mSELECT "charts".* FROM "charts" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/" for ::1 at 2020-08-02 21:37:17 +0100
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/lindseywells/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/lindseywells/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 7.5ms | Allocations: 315)
+Completed 200 OK in 16ms (Views: 11.0ms | ActiveRecord: 0.0ms | Allocations: 1595)
+
+
+Started GET "/api/charts" for ::1 at 2020-08-02 21:37:27 +0100
+  
+SyntaxError (/Users/lindseywells/Development/code/ChartFinderWeb/chartfinder-api/app/controllers/api/charts_controller.rb:4: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/api/charts_controller.rb:4: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/charts_controller.rb:4: syntax error, unexpected end-of-input, expecting end
+Started GET "/api/charts" for ::1 at 2020-08-02 21:37:39 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::ChartsController#index as HTML
+  [1m[36mChart Load (0.5ms)[0m  [1m[34mSELECT "charts".* FROM "charts"[0m
+  ↳ app/controllers/api/charts_controller.rb:3:in `index'
+Completed 200 OK in 10ms (Views: 7.4ms | ActiveRecord: 1.0ms | Allocations: 5847)
+
+
+Started GET "/api/charts" for ::1 at 2020-08-02 21:41:22 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/Users/lindseywells/Development/code/ChartFinderWeb/chartfinder-api/app/controllers/api/charts_controller.rb:24: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/api/charts_controller.rb:24: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/charts_controller.rb:24: syntax error, unexpected end-of-input, expecting end
+Started GET "/api/charts" for ::1 at 2020-08-02 21:41:35 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::ChartsController#index as HTML
+  [1m[36mChart Load (0.5ms)[0m  [1m[34mSELECT "charts".* FROM "charts"[0m
+  ↳ app/controllers/api/charts_controller.rb:3:in `index'
+Completed 200 OK in 9ms (Views: 5.8ms | ActiveRecord: 0.9ms | Allocations: 5465)
+
+
+Started GET "/api/charts" for ::1 at 2020-08-02 21:46:27 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::ChartsController#index as HTML
+  [1m[36mChart Load (0.1ms)[0m  [1m[34mSELECT "charts".* FROM "charts"[0m
+  ↳ app/controllers/api/charts_controller.rb:5:in `index'
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.6ms | Allocations: 5451)
+
+
