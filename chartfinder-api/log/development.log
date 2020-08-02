@@ -72,3 +72,86 @@ Processing by Api::ChartsController#index as HTML
 Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.6ms | Allocations: 5451)
 
 
+Started GET "/api/charts" for ::1 at 2020-08-02 21:51:09 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/Users/lindseywells/Development/code/ChartFinderWeb/chartfinder-api/app/controllers/api/charts_controller.rb:43: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/api/charts_controller.rb:43: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/charts_controller.rb:43: syntax error, unexpected end-of-input, expecting end
+Started GET "/api/charts" for ::1 at 2020-08-02 21:51:24 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/Users/lindseywells/Development/code/ChartFinderWeb/chartfinder-api/app/controllers/api/charts_controller.rb:41: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/api/charts_controller.rb:41: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/charts_controller.rb:41: syntax error, unexpected end-of-input, expecting end
+Started GET "/api/charts" for ::1 at 2020-08-02 21:51:25 +0100
+  
+SyntaxError (/Users/lindseywells/Development/code/ChartFinderWeb/chartfinder-api/app/controllers/api/charts_controller.rb:41: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/api/charts_controller.rb:41: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/charts_controller.rb:41: syntax error, unexpected end-of-input, expecting end
+Started GET "/api/charts" for ::1 at 2020-08-02 21:51:32 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/Users/lindseywells/Development/code/ChartFinderWeb/chartfinder-api/app/controllers/api/charts_controller.rb:42: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/api/charts_controller.rb:42: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/charts_controller.rb:42: syntax error, unexpected end-of-input, expecting end
+Started GET "/api/charts" for ::1 at 2020-08-02 21:51:45 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::ChartsController#index as HTML
+  [1m[36mChart Load (0.1ms)[0m  [1m[34mSELECT "charts".* FROM "charts"[0m
+  ↳ app/controllers/api/charts_controller.rb:5:in `index'
+Completed 200 OK in 9ms (Views: 6.1ms | ActiveRecord: 0.6ms | Allocations: 5493)
+
+
+Started GET "/api/charts" for ::1 at 2020-08-02 21:51:51 +0100
+Processing by Api::ChartsController#index as HTML
+  [1m[36mChart Load (0.1ms)[0m  [1m[34mSELECT "charts".* FROM "charts"[0m
+  ↳ app/controllers/api/charts_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.1ms | Allocations: 949)
+
+
+Started GET "/api/charts/1" for ::1 at 2020-08-02 21:51:55 +0100
+Processing by Api::ChartsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mChart Load (0.2ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:37:in `set_chart'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 1086)
+
+
+Started GET "/api/charts/1" for ::1 at 2020-08-02 21:53:04 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::ChartsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mChart Load (0.2ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:37:in `set_chart'
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.7ms | Allocations: 5698)
+
+
+  
+NoMethodError (undefined method `pry' for #<Binding:0x00007ffea3a7eb90>
+Did you mean?  try):
+  
+app/controllers/api/charts_controller.rb:38:in `set_chart'
+Started GET "/api/charts/1" for ::1 at 2020-08-02 21:54:15 +0100
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::ChartsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mChart Load (0.5ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:37:in `set_chart'
+Completed 200 OK in 22658ms (Views: 0.6ms | ActiveRecord: 0.9ms | Allocations: 24428)
+
+
+Started GET "/api/charts/1" for ::1 at 2020-08-02 21:55:10 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::ChartsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mChart Load (0.6ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:37:in `set_chart'
+Completed 200 OK in 8128ms (Views: 0.7ms | ActiveRecord: 1.4ms | Allocations: 10856)
+
+
