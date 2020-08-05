@@ -13,7 +13,13 @@ songs: [{name:"do be do", artist: "kylie", img_url: "https://vignette.wikia.noco
   country: "USA",
   songs: [{name:"i be you", artist: "p diddy", img_url: "https://miro.medium.com/max/1280/0*Fw3EQ2srkGYJga3a."},
   {name:"song 2", artist: "dee piddy", img_url:"https://upload.wikimedia.org/wikipedia/en/9/9d/Ed_Sheeran_Afire_Love.jpg"}, ]
-  }
+  },
+  {
+    date: 1986,
+    country: "Japan",
+    songs: [{name:"i be you", artist: "p diddy", img_url: "https://miro.medium.com/max/1280/0*Fw3EQ2srkGYJga3a."},
+    {name:"song 2", artist: "dee piddy", img_url:"https://upload.wikimedia.org/wikipedia/en/9/9d/Ed_Sheeran_Afire_Love.jpg"}, ]
+    }
 
 
 ]
