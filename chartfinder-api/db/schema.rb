@@ -10,12 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_02_142523) do
+ActiveRecord::Schema.define(version: 2020_08_06_091845) do
 
   create_table "charts", force: :cascade do |t|
     t.string "date"
     t.string "country"
-    t.string "songs"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "songs", force: :cascade do |t|
+    t.string "name"
+    t.string "artist"
+    t.string "img_url"
+    t.integer "chart_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

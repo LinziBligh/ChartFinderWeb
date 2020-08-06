@@ -3,8 +3,6 @@ class CreateCharts < ActiveRecord::Migration[6.0]
     create_table :charts do |t|
       t.string :date
       t.string :country
-      t.string :songs
-      
       t.timestamps
     end
   end
