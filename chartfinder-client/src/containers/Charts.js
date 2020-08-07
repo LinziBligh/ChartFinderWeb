@@ -11,6 +11,7 @@ const Charts = (props) =>(
     <h3>{chart.date}</h3>
     <p>{chart.country}</p>
     <div className="SongsContainer">
+    {chart.songs.map(song=> <div className="SongCard"><p>{song.name} - {song.artist}</p> <img className="SongImage" src={song.img_url} alt={song.name}></img></div>)}
     
     </div>
   </div>)}
@@ -18,4 +19,3 @@ const Charts = (props) =>(
 
 export default Charts
 
-//{chart.songs.map(song=> <div className="SongCard"><p>{song.name} - {song.artist}</p> <img className="SongImage" src={song.img_url} alt={song.name}></img></div>)}

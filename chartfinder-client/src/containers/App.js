@@ -24,7 +24,7 @@ class App extends Component {
     console.log(this.state)
     return(
     <div className="App">
-    App Container
+    ChartFinder
     <Charts charts={this.state.charts} />
     </div>)
 }
