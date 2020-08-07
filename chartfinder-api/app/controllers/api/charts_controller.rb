@@ -2,7 +2,8 @@ class Api::ChartsController<ApplicationController
 before_action :set_chart, only: [:show, :edit, :destroy]
 
   def index
-    render json: Chart.all
+    charts=Chart.all
+    render json: ChartSerializer.new(charts).to_serialized_json
   end
 
   def show

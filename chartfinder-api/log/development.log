@@ -1088,3 +1088,192 @@ Processing by Api::ChartsController#index as */*
 Completed 200 OK in 7ms (Views: 4.6ms | ActiveRecord: 0.5ms | Allocations: 6106)
 
 
+Started GET "/api/charts" for ::1 at 2020-08-07 09:47:53 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::ChartsController#index as */*
+  [1m[36mChart Load (0.6ms)[0m  [1m[34mSELECT "charts".* FROM "charts" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/api/charts_controller.rb:5:in `inspect'
+  [1m[36mChart Load (0.2ms)[0m  [1m[34mSELECT "charts".* FROM "charts"[0m
+  ↳ app/controllers/api/charts_controller.rb:6:in `index'
+Completed 200 OK in 17ms (Views: 2.9ms | ActiveRecord: 0.8ms | Allocations: 6125)
+
+
+Started GET "/api/charts" for ::1 at 2020-08-07 09:49:31 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/Users/lindseywells/Development/code/ChartFinderWeb/chartfinder-api/app/controllers/api/charts_controller.rb:5: syntax error, unexpected tSYMBEG, expecting end
+    render json: Chart.all :include => [:songs] )
+                           ^
+/Users/lindseywells/Development/code/ChartFinderWeb/chartfinder-api/app/controllers/api/charts_controller.rb:5: syntax error, unexpected ')', expecting end
+...hart.all :include => [:songs] )
+...                              ^
+/Users/lindseywells/Development/code/ChartFinderWeb/chartfinder-api/app/controllers/api/charts_controller.rb:17: syntax error, unexpected tLAMBEG
+      render json:{message: chart.errors}, statu...
+                  ^
+/Users/lindseywells/Development/code/ChartFinderWeb/chartfinder-api/app/controllers/api/charts_controller.rb:17: syntax error, unexpected '}', expecting end
+...er json:{message: chart.errors}, status: 400
+...                              ^
+/Users/lindseywells/Development/code/ChartFinderWeb/chartfinder-api/app/controllers/api/charts_controller.rb:25: syntax error, unexpected tLAMBEG
+      render json:{message: "Unable to remove th...
+                  ^
+/Users/lindseywells/Development/code/ChartFinderWeb/chartfinder-api/app/controllers/api/charts_controller.rb:25: syntax error, unexpected '}', expecting end
+... "Unable to remove this chart"}, status: 400
+...                              ^
+/Users/lindseywells/Development/code/ChartFinderWeb/chartfinder-api/app/controllers/api/charts_controller.rb:43: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/api/charts_controller.rb:5: syntax error, unexpected tSYMBEG, expecting end
+app/controllers/api/charts_controller.rb:5: syntax error, unexpected ')', expecting end
+app/controllers/api/charts_controller.rb:17: syntax error, unexpected tLAMBEG
+app/controllers/api/charts_controller.rb:17: syntax error, unexpected '}', expecting end
+app/controllers/api/charts_controller.rb:25: syntax error, unexpected tLAMBEG
+app/controllers/api/charts_controller.rb:25: syntax error, unexpected '}', expecting end
+app/controllers/api/charts_controller.rb:43: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/charts_controller.rb:5: syntax error, unexpected tSYMBEG, expecting end
+app/controllers/api/charts_controller.rb:5: syntax error, unexpected ')', expecting end
+app/controllers/api/charts_controller.rb:17: syntax error, unexpected tLAMBEG
+app/controllers/api/charts_controller.rb:17: syntax error, unexpected '}', expecting end
+app/controllers/api/charts_controller.rb:25: syntax error, unexpected tLAMBEG
+app/controllers/api/charts_controller.rb:25: syntax error, unexpected '}', expecting end
+app/controllers/api/charts_controller.rb:43: syntax error, unexpected end-of-input, expecting end
+Started GET "/api/charts" for ::1 at 2020-08-07 09:53:12 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/Users/lindseywells/Development/code/ChartFinderWeb/chartfinder-api/app/controllers/api/charts_controller.rb:5: syntax error, unexpected ( arg, expecting end
+    render json: Chart.all (:include => [:songs] )
+                           ^
+/Users/lindseywells/Development/code/ChartFinderWeb/chartfinder-api/app/controllers/api/charts_controller.rb:5: syntax error, unexpected =>, expecting ')'
+...er json: Chart.all (:include => [:songs] )
+...                             ^~
+/Users/lindseywells/Development/code/ChartFinderWeb/chartfinder-api/app/controllers/api/charts_controller.rb:43: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/api/charts_controller.rb:5: syntax error, unexpected ( arg, expecting end
+app/controllers/api/charts_controller.rb:5: syntax error, unexpected =>, expecting ')'
+app/controllers/api/charts_controller.rb:43: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/charts_controller.rb:5: syntax error, unexpected ( arg, expecting end
+app/controllers/api/charts_controller.rb:5: syntax error, unexpected =>, expecting ')'
+app/controllers/api/charts_controller.rb:43: syntax error, unexpected end-of-input, expecting end
+Started GET "/api/charts" for ::1 at 2020-08-07 09:57:03 +0100
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/Users/lindseywells/Development/code/ChartFinderWeb/chartfinder-api/app/controllers/api/charts_controller.rb:6: syntax error, unexpected =>, expecting ')'
+...ender json: charts, (include => [:songs] )
+...                             ^~
+/Users/lindseywells/Development/code/ChartFinderWeb/chartfinder-api/app/controllers/api/charts_controller.rb:6: syntax error, unexpected '\n', expecting =>
+/Users/lindseywells/Development/code/ChartFinderWeb/chartfinder-api/app/controllers/api/charts_controller.rb:44: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/api/charts_controller.rb:6: syntax error, unexpected =>, expecting ')'
+app/controllers/api/charts_controller.rb:6: syntax error, unexpected '\n', expecting =>
+app/controllers/api/charts_controller.rb:44: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/charts_controller.rb:6: syntax error, unexpected =>, expecting ')'
+app/controllers/api/charts_controller.rb:6: syntax error, unexpected '\n', expecting =>
+app/controllers/api/charts_controller.rb:44: syntax error, unexpected end-of-input, expecting end
+Started GET "/api/charts" for ::1 at 2020-08-07 09:57:25 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/Users/lindseywells/Development/code/ChartFinderWeb/chartfinder-api/app/controllers/api/charts_controller.rb:6: syntax error, unexpected tLABEL
+... render json: charts, (include: [:songs] )
+...                       ^~~~~~~~
+/Users/lindseywells/Development/code/ChartFinderWeb/chartfinder-api/app/controllers/api/charts_controller.rb:6: syntax error, unexpected '\n', expecting =>
+/Users/lindseywells/Development/code/ChartFinderWeb/chartfinder-api/app/controllers/api/charts_controller.rb:44: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/api/charts_controller.rb:6: syntax error, unexpected tLABEL
+app/controllers/api/charts_controller.rb:6: syntax error, unexpected '\n', expecting =>
+app/controllers/api/charts_controller.rb:44: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/charts_controller.rb:6: syntax error, unexpected tLABEL
+app/controllers/api/charts_controller.rb:6: syntax error, unexpected '\n', expecting =>
+app/controllers/api/charts_controller.rb:44: syntax error, unexpected end-of-input, expecting end
+Started GET "/api/charts" for ::1 at 2020-08-07 10:03:48 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::ChartsController#index as */*
+  [1m[36mChart Load (0.1ms)[0m  [1m[34mSELECT "charts".* FROM "charts"[0m
+  ↳ app/controllers/api/charts_controller.rb:5:in `index'
+Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 0.8ms | Allocations: 5600)
+
+
+Started GET "/api/charts" for ::1 at 2020-08-07 10:08:56 +0100
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::ChartsController#index as */*
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 1387)
+
+
+  
+SyntaxError (/Users/lindseywells/Development/code/ChartFinderWeb/chartfinder-api/app/services/chart_serializer.rb:10: syntax error, unexpected '}'
+        songs:}
+              ^
+/Users/lindseywells/Development/code/ChartFinderWeb/chartfinder-api/app/services/chart_serializer.rb:15: syntax error, unexpected end-of-input, expecting end):
+  
+app/services/chart_serializer.rb:10: syntax error, unexpected '}'
+app/services/chart_serializer.rb:15: syntax error, unexpected end-of-input, expecting end
+app/services/chart_serializer.rb:10: syntax error, unexpected '}'
+app/services/chart_serializer.rb:15: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/charts_controller.rb:6:in `index'
+Started GET "/api/charts" for ::1 at 2020-08-07 10:09:27 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::ChartsController#index as */*
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1057)
+
+
+  
+SyntaxError (/Users/lindseywells/Development/code/ChartFinderWeb/chartfinder-api/app/services/chart_serializer.rb:11: syntax error, unexpected '}'
+      }
+      ^
+/Users/lindseywells/Development/code/ChartFinderWeb/chartfinder-api/app/services/chart_serializer.rb:15: syntax error, unexpected end-of-input, expecting end):
+  
+app/services/chart_serializer.rb:11: syntax error, unexpected '}'
+app/services/chart_serializer.rb:15: syntax error, unexpected end-of-input, expecting end
+app/services/chart_serializer.rb:11: syntax error, unexpected '}'
+app/services/chart_serializer.rb:15: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/charts_controller.rb:6:in `index'
+Started GET "/api/charts" for ::1 at 2020-08-07 10:10:20 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::ChartsController#index as */*
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1065)
+
+
+  
+SyntaxError (/Users/lindseywells/Development/code/ChartFinderWeb/chartfinder-api/app/services/chart_serializer.rb:17: syntax error, unexpected end-of-input, expecting end):
+  
+app/services/chart_serializer.rb:17: syntax error, unexpected end-of-input, expecting end
+app/services/chart_serializer.rb:17: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/charts_controller.rb:6:in `index'
+Started GET "/api/charts" for ::1 at 2020-08-07 10:11:12 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::ChartsController#index as */*
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1065)
+
+
+  
+SyntaxError (/Users/lindseywells/Development/code/ChartFinderWeb/chartfinder-api/app/services/chart_serializer.rb:17: syntax error, unexpected end-of-input, expecting end):
+  
+app/services/chart_serializer.rb:17: syntax error, unexpected end-of-input, expecting end
+app/services/chart_serializer.rb:17: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/charts_controller.rb:6:in `index'
+Started GET "/api/charts" for ::1 at 2020-08-07 10:12:12 +0100
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::ChartsController#index as */*
+  [1m[36mChart Load (0.1ms)[0m  [1m[34mSELECT "charts".* FROM "charts"[0m
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.5ms | Allocations: 7680)
+
+
+  
+NoMethodError (undefined method `song' for #<Chart:0x00007fd508012630>
+Did you mean?  songs):
+  
+app/services/chart_serializer.rb:16:in `to_serialized_json'
+app/controllers/api/charts_controller.rb:6:in `index'
+Started GET "/api/charts" for ::1 at 2020-08-07 10:12:22 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::ChartsController#index as */*
+  [1m[36mChart Load (0.1ms)[0m  [1m[34mSELECT "charts".* FROM "charts"[0m
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+  [1m[36mSong Load (0.7ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 1]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 2]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 3]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+Completed 200 OK in 29ms (Views: 0.1ms | ActiveRecord: 1.9ms | Allocations: 15878)
+
+
