@@ -156,6 +156,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
   listen (~> 3.2)
+  nokogiri
   pry
   puma (~> 4.1)
   rack-cors
