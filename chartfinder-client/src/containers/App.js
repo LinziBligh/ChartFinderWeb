@@ -16,13 +16,13 @@ class App extends Component {
   }
 
   componentDidMount(){
-    fetch('http://localhost:3001/api/charts/1')
+    fetch('http://localhost:3001/api/charts/1989-08-11')
     .then(response => response.json())
     .then (chart=> this.setState({chart, loading: false}))
   }
 
   submitDateForm = date =>{
-    this.setState({...this.state, loading: true});
+    this.setState({...this.state, loading: true, date: date});
     fetch(`http://localhost:3001/api/charts/${date}`)
     .then(response => response.json())
     .then (chart=> this.setState({chart, loading: false, date: date}))

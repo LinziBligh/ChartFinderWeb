@@ -33,11 +33,12 @@ before_action :set_chart, only: [:show, :edit, :destroy]
       params .require(:chart).permit(:date, :country, :songs)
     end
 
-    ##helper method to set chart
+    ##helper method to flip date and set chart
     def set_chart
-      @chart = Chart.find_by(id: params[:id])
+      ddmmyyyy = params[:id].split("-").reverse.join("-")
+      @chart = Chart.find_by(date: ddmmyyyy)
+      
     end
-
 
 
 
