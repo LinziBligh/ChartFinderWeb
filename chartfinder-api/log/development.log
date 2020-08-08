@@ -1876,3 +1876,287 @@ Processing by Api::ChartsController#show as */*
 Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 1639)
 
 
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "charts"[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "charts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "date" varchar, "country" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "songs"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "songs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "artist" varchar, "img_url" varchar, "chart_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200806091845)[0m
+  [1m[35m (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200802142523);
+
+[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-08-08 09:18:47.826032"], ["updated_at", "2020-08-08 09:18:47.826032"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "5c9a2254bba3a56e8180dc823cc04544a1a05382"], ["created_at", "2020-08-08 09:18:47.844102"], ["updated_at", "2020-08-08 09:18:47.844102"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "charts"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "charts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "date" varchar, "country" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "songs"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "songs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "artist" varchar, "img_url" varchar, "chart_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200806091845)[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200802142523);
+
+[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-08-08 09:18:47.864563"], ["updated_at", "2020-08-08 09:18:47.864563"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2020-08-08 09:18:47.869671"], ["key", "environment"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "5c9a2254bba3a56e8180dc823cc04544a1a05382"], ["created_at", "2020-08-08 09:18:47.875845"], ["updated_at", "2020-08-08 09:18:47.875845"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSong Create (0.3ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Do Be Do"], ["artist", "S Club 7"], ["img_url", "https://upload.wikimedia.org/wikipedia/en/1/16/S_Club_Sunshine_%28Album_Cover%29.jpg"], ["created_at", "2020-08-08 09:18:47.912225"], ["updated_at", "2020-08-08 09:18:47.912225"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSong Create (0.3ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Best Song Ever"], ["artist", "Kylie Minogue"], ["img_url", "https://vignette.wikia.nocookie.net/kylieminogue/images/5/52/2_Hearts.jpg/revision/latest/scale-to-width-down/220?cb=20161113160538"], ["created_at", "2020-08-08 09:18:47.917448"], ["updated_at", "2020-08-08 09:18:47.917448"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSong Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "MMMM Bwop"], ["artist", "Take That"], ["img_url", "https://upload.wikimedia.org/wikipedia/en/a/a7/Take_that_and_party.jpg"], ["created_at", "2020-08-08 09:18:47.922179"], ["updated_at", "2020-08-08 09:18:47.922179"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSong Create (0.3ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BananaFarmer"], ["artist", "Vengaboys"], ["img_url", "https://upload.wikimedia.org/wikipedia/en/f/f8/BoomBoomBoomBoom.jpg"], ["created_at", "2020-08-08 09:18:47.928223"], ["updated_at", "2020-08-08 09:18:47.928223"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSong Create (0.3ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "SongE"], ["artist", "E's are good"], ["img_url", "https://i.ytimg.com/vi/9bQzbduuGlQ/maxresdefault.jpg"], ["created_at", "2020-08-08 09:18:47.933011"], ["updated_at", "2020-08-08 09:18:47.933011"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mChart Create (0.3ms)[0m  [1m[32mINSERT INTO "charts" ("date", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["date", "08-01-1984"], ["country", "UK"], ["created_at", "2020-08-08 09:18:47.945510"], ["updated_at", "2020-08-08 09:18:47.945510"]]
+  [1m[36mSong Update (0.1ms)[0m  [1m[33mUPDATE "songs" SET "chart_id" = ?, "updated_at" = ? WHERE "songs"."id" = ?[0m  [["chart_id", 1], ["updated_at", "2020-08-08 09:18:47.947959"], ["id", 1]]
+  [1m[36mSong Update (0.1ms)[0m  [1m[33mUPDATE "songs" SET "chart_id" = ?, "updated_at" = ? WHERE "songs"."id" = ?[0m  [["chart_id", 1], ["updated_at", "2020-08-08 09:18:47.949456"], ["id", 2]]
+  [1m[36mSong Update (0.1ms)[0m  [1m[33mUPDATE "songs" SET "chart_id" = ?, "updated_at" = ? WHERE "songs"."id" = ?[0m  [["chart_id", 1], ["updated_at", "2020-08-08 09:18:47.950783"], ["id", 3]]
+  [1m[36mSong Update (0.1ms)[0m  [1m[33mUPDATE "songs" SET "chart_id" = ?, "updated_at" = ? WHERE "songs"."id" = ?[0m  [["chart_id", 1], ["updated_at", "2020-08-08 09:18:47.952030"], ["id", 4]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mChart Create (0.3ms)[0m  [1m[32mINSERT INTO "charts" ("date", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["date", "11-08-1989"], ["country", "Japan"], ["created_at", "2020-08-08 09:18:47.955178"], ["updated_at", "2020-08-08 09:18:47.955178"]]
+  [1m[36mSong Update (0.1ms)[0m  [1m[33mUPDATE "songs" SET "chart_id" = ?, "updated_at" = ? WHERE "songs"."id" = ?[0m  [["chart_id", 2], ["updated_at", "2020-08-08 09:18:47.957160"], ["id", 1]]
+  [1m[36mSong Update (0.1ms)[0m  [1m[33mUPDATE "songs" SET "chart_id" = ?, "updated_at" = ? WHERE "songs"."id" = ?[0m  [["chart_id", 2], ["updated_at", "2020-08-08 09:18:47.958540"], ["id", 5]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mChart Create (0.3ms)[0m  [1m[32mINSERT INTO "charts" ("date", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["date", "25-12-1995"], ["country", "USA"], ["created_at", "2020-08-08 09:18:47.961691"], ["updated_at", "2020-08-08 09:18:47.961691"]]
+  [1m[36mSong Update (0.1ms)[0m  [1m[33mUPDATE "songs" SET "chart_id" = ?, "updated_at" = ? WHERE "songs"."id" = ?[0m  [["chart_id", 3], ["updated_at", "2020-08-08 09:18:47.963674"], ["id", 3]]
+  [1m[36mSong Update (0.1ms)[0m  [1m[33mUPDATE "songs" SET "chart_id" = ?, "updated_at" = ? WHERE "songs"."id" = ?[0m  [["chart_id", 3], ["updated_at", "2020-08-08 09:18:47.964853"], ["id", 2]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSong Create (0.3ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Do Be Do"], ["artist", "S Club 7"], ["img_url", "https://upload.wikimedia.org/wikipedia/en/1/16/S_Club_Sunshine_%28Album_Cover%29.jpg"], ["created_at", "2020-08-08 09:18:58.152006"], ["updated_at", "2020-08-08 09:18:58.152006"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSong Create (0.3ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Best Song Ever"], ["artist", "Kylie Minogue"], ["img_url", "https://vignette.wikia.nocookie.net/kylieminogue/images/5/52/2_Hearts.jpg/revision/latest/scale-to-width-down/220?cb=20161113160538"], ["created_at", "2020-08-08 09:18:58.157030"], ["updated_at", "2020-08-08 09:18:58.157030"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSong Create (0.3ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "MMMM Bwop"], ["artist", "Take That"], ["img_url", "https://upload.wikimedia.org/wikipedia/en/a/a7/Take_that_and_party.jpg"], ["created_at", "2020-08-08 09:18:58.160830"], ["updated_at", "2020-08-08 09:18:58.160830"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSong Create (0.3ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BananaFarmer"], ["artist", "Vengaboys"], ["img_url", "https://upload.wikimedia.org/wikipedia/en/f/f8/BoomBoomBoomBoom.jpg"], ["created_at", "2020-08-08 09:18:58.164742"], ["updated_at", "2020-08-08 09:18:58.164742"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSong Create (0.3ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "SongE"], ["artist", "E's are good"], ["img_url", "https://i.ytimg.com/vi/9bQzbduuGlQ/maxresdefault.jpg"], ["created_at", "2020-08-08 09:18:58.168492"], ["updated_at", "2020-08-08 09:18:58.168492"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mChart Create (0.3ms)[0m  [1m[32mINSERT INTO "charts" ("date", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["date", "08-01-1984"], ["country", "UK"], ["created_at", "2020-08-08 09:18:58.178028"], ["updated_at", "2020-08-08 09:18:58.178028"]]
+  [1m[36mSong Update (0.1ms)[0m  [1m[33mUPDATE "songs" SET "chart_id" = ?, "updated_at" = ? WHERE "songs"."id" = ?[0m  [["chart_id", 4], ["updated_at", "2020-08-08 09:18:58.180635"], ["id", 6]]
+  [1m[36mSong Update (0.1ms)[0m  [1m[33mUPDATE "songs" SET "chart_id" = ?, "updated_at" = ? WHERE "songs"."id" = ?[0m  [["chart_id", 4], ["updated_at", "2020-08-08 09:18:58.182772"], ["id", 7]]
+  [1m[36mSong Update (0.1ms)[0m  [1m[33mUPDATE "songs" SET "chart_id" = ?, "updated_at" = ? WHERE "songs"."id" = ?[0m  [["chart_id", 4], ["updated_at", "2020-08-08 09:18:58.184098"], ["id", 8]]
+  [1m[36mSong Update (0.1ms)[0m  [1m[33mUPDATE "songs" SET "chart_id" = ?, "updated_at" = ? WHERE "songs"."id" = ?[0m  [["chart_id", 4], ["updated_at", "2020-08-08 09:18:58.185479"], ["id", 9]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mChart Create (0.3ms)[0m  [1m[32mINSERT INTO "charts" ("date", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["date", "11-08-1989"], ["country", "Japan"], ["created_at", "2020-08-08 09:18:58.193310"], ["updated_at", "2020-08-08 09:18:58.193310"]]
+  [1m[36mSong Update (0.1ms)[0m  [1m[33mUPDATE "songs" SET "chart_id" = ?, "updated_at" = ? WHERE "songs"."id" = ?[0m  [["chart_id", 5], ["updated_at", "2020-08-08 09:18:58.195502"], ["id", 6]]
+  [1m[36mSong Update (0.1ms)[0m  [1m[33mUPDATE "songs" SET "chart_id" = ?, "updated_at" = ? WHERE "songs"."id" = ?[0m  [["chart_id", 5], ["updated_at", "2020-08-08 09:18:58.196729"], ["id", 10]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mChart Create (0.2ms)[0m  [1m[32mINSERT INTO "charts" ("date", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["date", "25-12-1995"], ["country", "USA"], ["created_at", "2020-08-08 09:18:58.199407"], ["updated_at", "2020-08-08 09:18:58.199407"]]
+  [1m[36mSong Update (0.1ms)[0m  [1m[33mUPDATE "songs" SET "chart_id" = ?, "updated_at" = ? WHERE "songs"."id" = ?[0m  [["chart_id", 6], ["updated_at", "2020-08-08 09:18:58.201388"], ["id", 8]]
+  [1m[36mSong Update (0.1ms)[0m  [1m[33mUPDATE "songs" SET "chart_id" = ?, "updated_at" = ? WHERE "songs"."id" = ?[0m  [["chart_id", 6], ["updated_at", "2020-08-08 09:18:58.202608"], ["id", 7]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/api/charts/1" for ::1 at 2020-08-08 10:19:09 +0100
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mChart Load (0.1ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:38:in `set_chart'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 1]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+Completed 200 OK in 22ms (Views: 0.1ms | ActiveRecord: 1.2ms | Allocations: 14150)
+
+
+Started GET "/api/charts/1" for ::1 at 2020-08-08 10:19:41 +0100
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mChart Load (0.1ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:38:in `set_chart'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 1]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 1656)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "charts"[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "charts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "date" varchar, "country" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "songs"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "songs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "artist" varchar, "img_url" varchar, "chart_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200806091845)[0m
+  [1m[35m (4.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200802142523);
+
+[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-08-08 09:20:17.053109"], ["updated_at", "2020-08-08 09:20:17.053109"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "5c9a2254bba3a56e8180dc823cc04544a1a05382"], ["created_at", "2020-08-08 09:20:17.062056"], ["updated_at", "2020-08-08 09:20:17.062056"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "charts"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "charts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "date" varchar, "country" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "songs"[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "songs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "artist" varchar, "img_url" varchar, "chart_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200806091845)[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200802142523);
+
+[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-08-08 09:20:17.081362"], ["updated_at", "2020-08-08 09:20:17.081362"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2020-08-08 09:20:17.088954"], ["key", "environment"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "5c9a2254bba3a56e8180dc823cc04544a1a05382"], ["created_at", "2020-08-08 09:20:17.096892"], ["updated_at", "2020-08-08 09:20:17.096892"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSong Create (0.3ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Do Be Do"], ["artist", "S Club 7"], ["img_url", "https://upload.wikimedia.org/wikipedia/en/1/16/S_Club_Sunshine_%28Album_Cover%29.jpg"], ["created_at", "2020-08-08 09:20:17.121154"], ["updated_at", "2020-08-08 09:20:17.121154"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Best Song Ever"], ["artist", "Kylie Minogue"], ["img_url", "https://vignette.wikia.nocookie.net/kylieminogue/images/5/52/2_Hearts.jpg/revision/latest/scale-to-width-down/220?cb=20161113160538"], ["created_at", "2020-08-08 09:20:17.124874"], ["updated_at", "2020-08-08 09:20:17.124874"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "MMMM Bwop"], ["artist", "Take That"], ["img_url", "https://upload.wikimedia.org/wikipedia/en/a/a7/Take_that_and_party.jpg"], ["created_at", "2020-08-08 09:20:17.128022"], ["updated_at", "2020-08-08 09:20:17.128022"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSong Create (0.3ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BananaFarmer"], ["artist", "Vengaboys"], ["img_url", "https://upload.wikimedia.org/wikipedia/en/f/f8/BoomBoomBoomBoom.jpg"], ["created_at", "2020-08-08 09:20:17.131441"], ["updated_at", "2020-08-08 09:20:17.131441"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSong Create (0.3ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "SongE"], ["artist", "E's are good"], ["img_url", "https://i.ytimg.com/vi/9bQzbduuGlQ/maxresdefault.jpg"], ["created_at", "2020-08-08 09:20:17.135129"], ["updated_at", "2020-08-08 09:20:17.135129"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mChart Create (0.4ms)[0m  [1m[32mINSERT INTO "charts" ("date", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["date", "08-01-1984"], ["country", "UK"], ["created_at", "2020-08-08 09:20:17.149116"], ["updated_at", "2020-08-08 09:20:17.149116"]]
+  [1m[36mSong Update (0.2ms)[0m  [1m[33mUPDATE "songs" SET "chart_id" = ?, "updated_at" = ? WHERE "songs"."id" = ?[0m  [["chart_id", 1], ["updated_at", "2020-08-08 09:20:17.152845"], ["id", 1]]
+  [1m[36mSong Update (0.2ms)[0m  [1m[33mUPDATE "songs" SET "chart_id" = ?, "updated_at" = ? WHERE "songs"."id" = ?[0m  [["chart_id", 1], ["updated_at", "2020-08-08 09:20:17.154851"], ["id", 2]]
+  [1m[36mSong Update (0.2ms)[0m  [1m[33mUPDATE "songs" SET "chart_id" = ?, "updated_at" = ? WHERE "songs"."id" = ?[0m  [["chart_id", 1], ["updated_at", "2020-08-08 09:20:17.157955"], ["id", 3]]
+  [1m[36mSong Update (0.1ms)[0m  [1m[33mUPDATE "songs" SET "chart_id" = ?, "updated_at" = ? WHERE "songs"."id" = ?[0m  [["chart_id", 1], ["updated_at", "2020-08-08 09:20:17.159813"], ["id", 4]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mChart Create (0.3ms)[0m  [1m[32mINSERT INTO "charts" ("date", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["date", "11-08-1989"], ["country", "Japan"], ["created_at", "2020-08-08 09:20:17.163046"], ["updated_at", "2020-08-08 09:20:17.163046"]]
+  [1m[36mSong Update (0.1ms)[0m  [1m[33mUPDATE "songs" SET "chart_id" = ?, "updated_at" = ? WHERE "songs"."id" = ?[0m  [["chart_id", 2], ["updated_at", "2020-08-08 09:20:17.165237"], ["id", 5]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSong Create (0.3ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Do Be Do"], ["artist", "S Club 7"], ["img_url", "https://upload.wikimedia.org/wikipedia/en/1/16/S_Club_Sunshine_%28Album_Cover%29.jpg"], ["created_at", "2020-08-08 09:20:22.501509"], ["updated_at", "2020-08-08 09:20:22.501509"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSong Create (0.3ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Best Song Ever"], ["artist", "Kylie Minogue"], ["img_url", "https://vignette.wikia.nocookie.net/kylieminogue/images/5/52/2_Hearts.jpg/revision/latest/scale-to-width-down/220?cb=20161113160538"], ["created_at", "2020-08-08 09:20:22.510719"], ["updated_at", "2020-08-08 09:20:22.510719"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "MMMM Bwop"], ["artist", "Take That"], ["img_url", "https://upload.wikimedia.org/wikipedia/en/a/a7/Take_that_and_party.jpg"], ["created_at", "2020-08-08 09:20:22.514362"], ["updated_at", "2020-08-08 09:20:22.514362"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSong Create (0.3ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BananaFarmer"], ["artist", "Vengaboys"], ["img_url", "https://upload.wikimedia.org/wikipedia/en/f/f8/BoomBoomBoomBoom.jpg"], ["created_at", "2020-08-08 09:20:22.517841"], ["updated_at", "2020-08-08 09:20:22.517841"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSong Create (0.3ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "SongE"], ["artist", "E's are good"], ["img_url", "https://i.ytimg.com/vi/9bQzbduuGlQ/maxresdefault.jpg"], ["created_at", "2020-08-08 09:20:22.521163"], ["updated_at", "2020-08-08 09:20:22.521163"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mChart Create (0.4ms)[0m  [1m[32mINSERT INTO "charts" ("date", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["date", "08-01-1984"], ["country", "UK"], ["created_at", "2020-08-08 09:20:22.529479"], ["updated_at", "2020-08-08 09:20:22.529479"]]
+  [1m[36mSong Update (0.2ms)[0m  [1m[33mUPDATE "songs" SET "chart_id" = ?, "updated_at" = ? WHERE "songs"."id" = ?[0m  [["chart_id", 3], ["updated_at", "2020-08-08 09:20:22.532292"], ["id", 6]]
+  [1m[36mSong Update (0.1ms)[0m  [1m[33mUPDATE "songs" SET "chart_id" = ?, "updated_at" = ? WHERE "songs"."id" = ?[0m  [["chart_id", 3], ["updated_at", "2020-08-08 09:20:22.534486"], ["id", 7]]
+  [1m[36mSong Update (0.1ms)[0m  [1m[33mUPDATE "songs" SET "chart_id" = ?, "updated_at" = ? WHERE "songs"."id" = ?[0m  [["chart_id", 3], ["updated_at", "2020-08-08 09:20:22.535924"], ["id", 8]]
+  [1m[36mSong Update (0.1ms)[0m  [1m[33mUPDATE "songs" SET "chart_id" = ?, "updated_at" = ? WHERE "songs"."id" = ?[0m  [["chart_id", 3], ["updated_at", "2020-08-08 09:20:22.537144"], ["id", 9]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mChart Create (0.2ms)[0m  [1m[32mINSERT INTO "charts" ("date", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["date", "11-08-1989"], ["country", "Japan"], ["created_at", "2020-08-08 09:20:22.540025"], ["updated_at", "2020-08-08 09:20:22.540025"]]
+  [1m[36mSong Update (0.1ms)[0m  [1m[33mUPDATE "songs" SET "chart_id" = ?, "updated_at" = ? WHERE "songs"."id" = ?[0m  [["chart_id", 4], ["updated_at", "2020-08-08 09:20:22.542022"], ["id", 10]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/api/charts/1" for ::1 at 2020-08-08 10:20:34 +0100
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mChart Load (0.1ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:38:in `set_chart'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 1]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+Completed 200 OK in 18ms (Views: 0.1ms | ActiveRecord: 1.0ms | Allocations: 14500)
+
+
+Started GET "/api/charts/1" for ::1 at 2020-08-08 10:23:12 +0100
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mChart Load (0.1ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:38:in `set_chart'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 1]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 2006)
+
+
