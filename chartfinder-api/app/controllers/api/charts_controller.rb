@@ -7,7 +7,7 @@ before_action :set_chart, only: [:show, :edit, :destroy]
   end
 
   def show
-    render json: @chart
+    render json: ChartSerializer.new(@chart).to_serialized_json
   end
 
   def create

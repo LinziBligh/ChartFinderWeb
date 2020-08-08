@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Charts from './Charts'
+import Chart from './Chart'
 
 
 
@@ -9,15 +9,15 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state={
-      charts:[],
+      chart: {},
       loading: true
     }
   }
 
   componentDidMount(){
-    fetch('http://localhost:3001/api/charts')
+    fetch('http://localhost:3001/api/charts/1')
     .then(response => response.json())
-    .then (charts=> this.setState({charts, loading: false}))
+    .then (chart=> this.setState({chart, loading: false}))
   }
 
 
@@ -26,7 +26,7 @@ class App extends Component {
     return(
     <div className="App">
     {this.state.loading ? <h1>Loading......</h1> :
-    <Charts charts={this.state.charts} />}
+    <Chart chart={this.state.chart} />}
     </div>)
 }
 }
