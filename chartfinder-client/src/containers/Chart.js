@@ -8,7 +8,7 @@ import DateForm from './DateForm'
 const Chart = (props) =>(
 <div className="ChartsContainer">
   <h1>Your Birthday Chart</h1>
-  <DateForm />
+  <DateForm submitDateForm={props.submitDateForm}/>
    <div className="ChartCard" key={props.chart.id}>
     <h3>{props.chart.date}</h3>
     <p>{props.chart.country}</p>

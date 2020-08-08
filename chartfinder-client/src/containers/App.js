@@ -10,7 +10,8 @@ class App extends Component {
     super(props)
     this.state={
       chart: {},
-      loading: true
+      loading: true,
+      date: ""
     }
   }
 
@@ -20,13 +21,20 @@ class App extends Component {
     .then (chart=> this.setState({chart, loading: false}))
   }
 
+  submitDateForm = date =>{
+    this.setState({...this.state, loading: true});
+    fetch(`http://localhost:3001/api/charts/${date}`)
+    .then(response => response.json())
+    .then (chart=> this.setState({chart, loading: false, date: date}))
+  }
+
 
   render (){
     console.log(this.state)
     return(
     <div className="App">
     {this.state.loading ? <h1>Loading......</h1> :
-    <Chart chart={this.state.chart} />}
+    <Chart chart={this.state.chart} submitDateForm={this.submitDateForm} />}
     </div>)
 }
 }

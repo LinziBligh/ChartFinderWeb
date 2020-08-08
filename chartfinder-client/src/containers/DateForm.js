@@ -5,7 +5,7 @@ class DateForm extends Component {
   constructor(props){
     super(props)
     this.state={
-      date: "9/9/99"
+      date: ""
     }
   }
 
@@ -15,13 +15,18 @@ class DateForm extends Component {
     })
   }
 
+  handleSubmit = event => {
+    event.preventDefault();
+    this.props.submitDateForm(this.state.date)
+  }
+
   render (){
     return(
       
       <div>
         Pick A Date
         <p>{this.state.date}</p>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <input type="date" onChange={event=>this.handleOnChange(event)} value={this.state.date}/>
         <input type="submit" />
         </form>
