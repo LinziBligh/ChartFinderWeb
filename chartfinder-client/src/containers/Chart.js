@@ -1,12 +1,14 @@
 import React from 'react'
 import './Chart.css'
 import Song from './Song'
+import DateForm from './DateForm'
 
 
 
 const Chart = (props) =>(
 <div className="ChartsContainer">
-  <h1>Chart</h1>
+  <h1>Your Birthday Chart</h1>
+  <DateForm />
    <div className="ChartCard" key={props.chart.id}>
     <h3>{props.chart.date}</h3>
     <p>{props.chart.country}</p>

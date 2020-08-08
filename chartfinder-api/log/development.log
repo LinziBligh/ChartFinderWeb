@@ -2182,3 +2182,24 @@ Processing by Api::ChartsController#show as */*
 Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 1.7ms | Allocations: 2035)
 
 
+Started GET "/api/charts/1" for ::1 at 2020-08-08 11:03:22 +0100
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mChart Load (0.1ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:38:in `set_chart'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 1]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 2006)
+
+
+Started GET "/api/charts/1" for ::1 at 2020-08-08 11:10:22 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mChart Load (0.6ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:38:in `set_chart'
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 1]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 1.2ms | Allocations: 2024)
+
+
