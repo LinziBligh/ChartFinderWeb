@@ -13,7 +13,7 @@ const Chart = (props) =>(
     <h3>{props.chart.date}</h3>
     <p>{props.chart.country}</p>
       <div className="SongsContainer">
-      {props.chart.songs.map(song=> <Song song={song} /> )}
+      {props.chart.songs.map(song=> <Song song={song} key={song.id}/> )}
     </div>
   </div>
 </div>)

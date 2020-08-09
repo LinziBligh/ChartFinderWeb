@@ -25,15 +25,8 @@ class App extends Component {
     this.setState({...this.state, loading: true, date: date});
     fetch(`http://localhost:3001/api/charts/${date}`)
     .then(response => response.json())
-    .then (chart=> {
-      //needs a catch instead maybe?
-      if (chart.status === 400){
-      this.setState({chart,  loading: false, date: date })
-      }
-      else {
-        this.setState({chart, loading: false, date: date})
-      }
-    })
+    .then (chart=> this.setState({chart, loading: false, date: date})
+    )
   }
 
 
@@ -41,7 +34,7 @@ class App extends Component {
     return(
     <div className="App">
     {this.state.loading ? <h1>Loading......</h1>  :
-    <Chart chart={this.state.chart} submitDateForm={this.submitDateForm} />}
+    <Chart chart={this.state.chart} submitDateForm={this.submitDateForm} key={this.state.chart.id}/>}
     </div>)
 }
 }

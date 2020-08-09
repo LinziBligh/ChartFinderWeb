@@ -8,7 +8,7 @@ class ChartSerializer
     options = {
       include:{
         songs:{
-          only:[:name, :artist, :img_url]
+          only:[:name, :artist, :img_url, :id]
         }
       }
     }

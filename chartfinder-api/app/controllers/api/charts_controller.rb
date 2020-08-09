@@ -18,7 +18,7 @@ before_action :set_chart, only: [:show, :edit, :destroy]
       chart.save
       ##for each song in songs, make it a new song object and pushit into chart.
       make_songs(songs, chart)
-      render json:{message: "cant find that one, we'll have to look it up for you.."}, status: 400
+      render json: ChartSerializer.new(chart).to_serialized_json
     end
   end
 
@@ -74,10 +74,14 @@ before_action :set_chart, only: [:show, :edit, :destroy]
         ##new_hash[:label] = song.css(".label").text.split.map(&:capitalize).join(' ')
         new_hash[:img_url] = song.css(".cover img").attribute("src").value
      
-     
+     spotify_image()
         @song_array << new_hash
         end
         @song_array
+    end
+
+    def spotify_image
+      puts "im looking for your shitty pictures!"
     end
 
     def make_songs(songs, chart)

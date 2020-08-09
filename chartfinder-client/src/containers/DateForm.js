@@ -25,7 +25,8 @@ class DateForm extends Component {
       
       <div>
         Pick A Date
-        <p>{this.state.date}</p>
+        <br />
+        <br />
         <form onSubmit={this.handleSubmit}>
           <input type="date" onChange={event=>this.handleOnChange(event)} value={this.state.date}/>
         <input type="submit" />
