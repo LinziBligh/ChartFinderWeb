@@ -1,4 +1,4 @@
-class Scraper
+Module ScraperHelper
 
   def self.scrape(url)
     html = open(url)

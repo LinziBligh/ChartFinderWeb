@@ -1,4 +1,4 @@
-class Song_Maker
+Module Song_MakerHelper
 
   attr_accessor :title, :artist, :label, :coverlink
   

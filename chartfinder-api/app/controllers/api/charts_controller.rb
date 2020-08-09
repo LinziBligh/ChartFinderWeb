@@ -1,3 +1,4 @@
+
 class Api::ChartsController<ApplicationController
 before_action :set_chart, only: [:show, :edit, :destroy]
 
@@ -11,6 +12,7 @@ before_action :set_chart, only: [:show, :edit, :destroy]
      render json: ChartSerializer.new(@chart).to_serialized_json
     else
       ##start to scrape it and add to database (need date)
+      date_to_url(@date)
       render json:{message: "cant find that one, we'll have to look it up for you.."}, status: 400
     end
   end
@@ -34,15 +36,24 @@ before_action :set_chart, only: [:show, :edit, :destroy]
 
     private
 
+    BASE_PATH = "https://www.officialcharts.com/charts/singles-chart/"
+
     def chart_params
       params .require(:chart).permit(:date, :country, :songs)
     end
 
     ##helper method to flip date and set chart
     def set_chart
-      ddmmyyyy = params[:id].split("-").reverse.join("-")
-      @chart = Chart.find_by(date: ddmmyyyy)
+      @date = params[:id].split("-").reverse.join("-")
+      @chart = Chart.find_by(date: @date)
       
+    end
+
+    ##helper method to set date to work with url
+    def date_to_url(date)
+      adjusted_date = date.split('-').reverse.join("")
+      @url = BASE_PATH + adjusted_date
+      puts @url
     end
 
 
