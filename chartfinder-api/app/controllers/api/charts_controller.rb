@@ -12,9 +12,12 @@ before_action :set_chart, only: [:show, :edit, :destroy]
     if @chart
      render json: ChartSerializer.new(@chart).to_serialized_json
     else
-      ##start to scrape it and add to database (need date)
       date_to_url(@date)
-      scrape(@url)
+      songs = scrape(@url)
+      chart = Chart.create(date: @date, country: "UK")
+      chart.save
+      ##for each song in songs, make it a new song object and pushit into chart.
+      make_songs(songs, chart)
       render json:{message: "cant find that one, we'll have to look it up for you.."}, status: 400
     end
   end
@@ -57,16 +60,12 @@ before_action :set_chart, only: [:show, :edit, :destroy]
       @url = BASE_PATH + adjusted_date
     end
 
-    def make_songs
-      @song_array = scrape(@url)
-      puts @song_array
-    end
 
     def scrape(url)
       html = open(url)
       doc = Nokogiri::HTML(html)
       songs = doc.css("table.chart-positions div.track")
-      song_array = []
+      @song_array = []
         
         songs.each do |song|
         new_hash = {}
@@ -76,9 +75,16 @@ before_action :set_chart, only: [:show, :edit, :destroy]
         new_hash[:img_url] = song.css(".cover img").attribute("src").value
      
      
-        song_array << new_hash
+        @song_array << new_hash
         end
-        puts song_array
+        @song_array
+    end
+
+    def make_songs(songs, chart)
+      songs.each do |song|
+        @song = chart.songs.build(song)
+        @song.save
+      end
     end
 
 
