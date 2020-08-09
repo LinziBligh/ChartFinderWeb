@@ -3527,3 +3527,205 @@ Processing by Api::ChartsController#show as */*
 Completed 400 Bad Request in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 652)
 
 
+Started GET "/api/charts/1989-08-11" for ::1 at 2020-08-09 11:03:59 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1989-08-11"}
+  [1m[36mChart Load (0.9ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "11-08-1989"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:48:in `set_chart'
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 2]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+Completed 200 OK in 39ms (Views: 0.2ms | ActiveRecord: 1.5ms | Allocations: 10901)
+
+
+Started GET "/api/charts/1972-12-09" for ::1 at 2020-08-09 11:04:09 +0100
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1972-12-09"}
+  [1m[36mChart Load (0.1ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "09-12-1972"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:48:in `set_chart'
+Completed 400 Bad Request in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 652)
+
+
+Started GET "/api/charts/1989-08-11" for ::1 at 2020-08-09 11:04:56 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1989-08-11"}
+  [1m[36mChart Load (0.4ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "11-08-1989"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:49:in `set_chart'
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 2]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+Completed 200 OK in 20ms (Views: 0.1ms | ActiveRecord: 2.3ms | Allocations: 11608)
+
+
+Started GET "/api/charts/1994-08-09" for ::1 at 2020-08-09 11:05:03 +0100
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1994-08-09"}
+  [1m[36mChart Load (0.2ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "09-08-1994"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:49:in `set_chart'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.2ms | Allocations: 654)
+
+
+  
+Errno::ENOENT (No such file or directory @ rb_sysopen - https://www.officialcharts.com/charts/singles-chart/19940809):
+  
+app/controllers/api/charts_controller.rb:65:in `initialize'
+app/controllers/api/charts_controller.rb:65:in `open'
+app/controllers/api/charts_controller.rb:65:in `scrape'
+app/controllers/api/charts_controller.rb:16:in `show'
+Started GET "/api/charts/1989-08-11" for ::1 at 2020-08-09 11:06:19 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1989-08-11"}
+  [1m[36mChart Load (0.9ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "11-08-1989"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:49:in `set_chart'
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 2]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+Completed 200 OK in 22ms (Views: 0.1ms | ActiveRecord: 2.5ms | Allocations: 11604)
+
+
+Started GET "/api/charts/1995-12-09" for ::1 at 2020-08-09 11:06:28 +0100
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1995-12-09"}
+  [1m[36mChart Load (0.2ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "09-12-1995"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:49:in `set_chart'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms | Allocations: 651)
+
+
+  
+Errno::ENOENT (No such file or directory @ rb_sysopen - https://www.officialcharts.com/charts/singles-chart/19951209):
+  
+app/controllers/api/charts_controller.rb:65:in `initialize'
+app/controllers/api/charts_controller.rb:65:in `open'
+app/controllers/api/charts_controller.rb:65:in `scrape'
+app/controllers/api/charts_controller.rb:16:in `show'
+Started GET "/api/charts/1989-08-11" for ::1 at 2020-08-09 11:07:54 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1989-08-11"}
+  [1m[36mChart Load (0.6ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "11-08-1989"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:50:in `set_chart'
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 2]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+Completed 200 OK in 19ms (Views: 0.1ms | ActiveRecord: 2.2ms | Allocations: 11616)
+
+
+Started GET "/api/charts/1987-12-09" for ::1 at 2020-08-09 11:08:00 +0100
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1987-12-09"}
+  [1m[36mChart Load (0.2ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "09-12-1987"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:50:in `set_chart'
+Completed 400 Bad Request in 791ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 30999)
+
+
+Started GET "/api/charts/1989-08-11" for ::1 at 2020-08-09 11:08:54 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1989-08-11"}
+  [1m[36mChart Load (1.0ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "11-08-1989"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:50:in `set_chart'
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 2]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+Completed 200 OK in 25ms (Views: 0.1ms | ActiveRecord: 2.8ms | Allocations: 11604)
+
+
+Started GET "/api/charts/1986-12-09" for ::1 at 2020-08-09 11:09:00 +0100
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1986-12-09"}
+  [1m[36mChart Load (0.1ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "09-12-1986"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:50:in `set_chart'
+Completed 400 Bad Request in 1237ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 19523)
+
+
+Started GET "/api/charts/1989-08-11" for ::1 at 2020-08-09 11:09:31 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1989-08-11"}
+  [1m[36mChart Load (0.3ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "11-08-1989"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:50:in `set_chart'
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 2]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+Completed 200 OK in 48ms (Views: 0.1ms | ActiveRecord: 2.0ms | Allocations: 11609)
+
+
+Started GET "/api/charts/1978-12-09" for ::1 at 2020-08-09 11:09:39 +0100
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1978-12-09"}
+  [1m[36mChart Load (0.2ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "09-12-1978"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:50:in `set_chart'
+Completed 400 Bad Request in 1168ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 16026)
+
+
+Started GET "/api/charts/1989-08-11" for ::1 at 2020-08-09 11:11:45 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/Users/lindseywells/Development/code/ChartFinderWeb/chartfinder-api/app/controllers/api/charts_controller.rb:84: formal argument cannot be an instance variable
+...ate_from_collection(@song_array)
+...                    ^~~~~~~~~~~):
+  
+app/controllers/api/charts_controller.rb:84: formal argument cannot be an instance variable
+app/controllers/api/charts_controller.rb:84: formal argument cannot be an instance variable
+Started GET "/api/charts/1989-08-11" for ::1 at 2020-08-09 11:11:47 +0100
+  
+SyntaxError (/Users/lindseywells/Development/code/ChartFinderWeb/chartfinder-api/app/controllers/api/charts_controller.rb:84: formal argument cannot be an instance variable
+...ate_from_collection(@song_array)
+...                    ^~~~~~~~~~~):
+  
+app/controllers/api/charts_controller.rb:84: formal argument cannot be an instance variable
+app/controllers/api/charts_controller.rb:84: formal argument cannot be an instance variable
+Started GET "/api/charts/1989-08-11" for ::1 at 2020-08-09 11:13:00 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1989-08-11"}
+  [1m[36mChart Load (0.5ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "11-08-1989"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:50:in `set_chart'
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 2]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+Completed 200 OK in 40ms (Views: 0.1ms | ActiveRecord: 2.4ms | Allocations: 11639)
+
+
+Started GET "/api/charts/1979-06-15" for ::1 at 2020-08-09 11:13:09 +0100
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1979-06-15"}
+  [1m[36mChart Load (0.2ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "15-06-1979"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:50:in `set_chart'
+Completed 400 Bad Request in 1241ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 15200)
+
+
+Started GET "/api/charts/1989-08-11" for ::1 at 2020-08-09 11:13:45 +0100
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1989-08-11"}
+  [1m[36mChart Load (0.4ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "11-08-1989"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:50:in `set_chart'
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 2]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+Completed 200 OK in 32ms (Views: 0.1ms | ActiveRecord: 2.1ms | Allocations: 11570)
+
+
+Started GET "/api/charts/2017-05-09" for ::1 at 2020-08-09 11:14:05 +0100
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"2017-05-09"}
+  [1m[36mChart Load (0.2ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "09-05-2017"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:50:in `set_chart'
+Completed 400 Bad Request in 1498ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 20157)
+
+
+Started GET "/api/charts/1989-08-11" for ::1 at 2020-08-09 11:16:27 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1989-08-11"}
+  [1m[36mChart Load (1.3ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "11-08-1989"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:50:in `set_chart'
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 2]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+Completed 200 OK in 20ms (Views: 0.2ms | ActiveRecord: 2.8ms | Allocations: 11604)
+
+
+Started GET "/api/charts/1988-01-09" for ::1 at 2020-08-09 11:16:35 +0100
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1988-01-09"}
+  [1m[36mChart Load (0.2ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "09-01-1988"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:50:in `set_chart'
+Completed 400 Bad Request in 1226ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 16500)
+
+

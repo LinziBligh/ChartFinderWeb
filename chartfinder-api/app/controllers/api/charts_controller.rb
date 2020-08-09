@@ -1,3 +1,4 @@
+require 'open-uri'
 
 class Api::ChartsController<ApplicationController
 before_action :set_chart, only: [:show, :edit, :destroy]
@@ -13,6 +14,7 @@ before_action :set_chart, only: [:show, :edit, :destroy]
     else
       ##start to scrape it and add to database (need date)
       date_to_url(@date)
+      scrape(@url)
       render json:{message: "cant find that one, we'll have to look it up for you.."}, status: 400
     end
   end
@@ -53,8 +55,32 @@ before_action :set_chart, only: [:show, :edit, :destroy]
     def date_to_url(date)
       adjusted_date = date.split('-').reverse.join("")
       @url = BASE_PATH + adjusted_date
-      puts @url
     end
+
+    def make_songs
+      @song_array = scrape(@url)
+      puts @song_array
+    end
+
+    def scrape(url)
+      html = open(url)
+      doc = Nokogiri::HTML(html)
+      songs = doc.css("table.chart-positions div.track")
+      song_array = []
+        
+        songs.each do |song|
+        new_hash = {}
+        new_hash[:name] = song.css(".title a").text.split.map(&:capitalize).join(' ')
+        new_hash[:artist] = song.css(".artist a").text.split.map(&:capitalize).join(' ')
+        ##new_hash[:label] = song.css(".label").text.split.map(&:capitalize).join(' ')
+        new_hash[:img_url] = song.css(".cover img").attribute("src").value
+     
+     
+        song_array << new_hash
+        end
+        puts song_array
+    end
+
 
 
 
