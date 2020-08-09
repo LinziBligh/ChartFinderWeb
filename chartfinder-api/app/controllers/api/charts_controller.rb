@@ -7,7 +7,12 @@ before_action :set_chart, only: [:show, :edit, :destroy]
   end
 
   def show
-    render json: ChartSerializer.new(@chart).to_serialized_json
+    if @chart
+     render json: ChartSerializer.new(@chart).to_serialized_json
+    else
+      ##start to scrape it and add to database (need date)
+      render json:{message: "cant find that one, we'll have to look it up for you.."}, status: 400
+    end
   end
 
   def create

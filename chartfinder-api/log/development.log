@@ -2771,3 +2771,388 @@ Processing by Api::ChartsController#show as */*
 Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 2000)
 
 
+Started GET "/api/charts/1989-08-11" for ::1 at 2020-08-09 06:17:23 +0100
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1989-08-11"}
+  [1m[36mChart Load (0.5ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "11-08-1989"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:43:in `set_chart'
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 2]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+Completed 200 OK in 27ms (Views: 0.2ms | ActiveRecord: 1.8ms | Allocations: 14158)
+
+
+Started GET "/api/charts/1984-01-08" for ::1 at 2020-08-09 06:17:35 +0100
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1984-01-08"}
+  [1m[36mChart Load (0.1ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "08-01-1984"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:43:in `set_chart'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 1]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 2016)
+
+
+Started GET "/api/charts/3999-05-03" for ::1 at 2020-08-09 06:17:44 +0100
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"3999-05-03"}
+  [1m[36mChart Load (0.1ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "03-05-3999"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:43:in `set_chart'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 657)
+
+
+Started GET "/api/charts/1989-08-11" for ::1 at 2020-08-09 06:25:09 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1989-08-11"}
+  [1m[36mChart Load (0.6ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "11-08-1989"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:43:in `set_chart'
+  [1m[36mSong Load (0.7ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 2]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.3ms | Allocations: 1695)
+
+
+Started GET "/api/charts/0007-07-07" for ::1 at 2020-08-09 06:25:24 +0100
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"0007-07-07"}
+  [1m[36mChart Load (0.1ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "07-07-0007"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:43:in `set_chart'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 656)
+
+
+Started GET "/api/charts/1989-08-11" for ::1 at 2020-08-09 06:26:09 +0100
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1989-08-11"}
+  [1m[36mChart Load (0.1ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "11-08-1989"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:43:in `set_chart'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 2]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1649)
+
+
+Started GET "/api/charts/1984-01-08" for ::1 at 2020-08-09 06:26:16 +0100
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1984-01-08"}
+  [1m[36mChart Load (0.2ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "08-01-1984"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:43:in `set_chart'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 1]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 2000)
+
+
+Started GET "/api/charts/0888-08-08" for ::1 at 2020-08-09 06:26:23 +0100
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"0888-08-08"}
+  [1m[36mChart Load (0.1ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "08-08-0888"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:43:in `set_chart'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 640)
+
+
+Started GET "/api/charts/1989-08-11" for ::1 at 2020-08-09 06:41:50 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1989-08-11"}
+  [1m[36mChart Load (0.6ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "11-08-1989"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:43:in `set_chart'
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 2]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+Completed 200 OK in 44ms (Views: 0.1ms | ActiveRecord: 1.2ms | Allocations: 10948)
+
+
+Started GET "/api/charts/1989-08-11" for ::1 at 2020-08-09 06:41:59 +0100
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1989-08-11"}
+  [1m[36mChart Load (0.3ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "11-08-1989"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:43:in `set_chart'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 2]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 1649)
+
+
+Started GET "/api/charts/1989-08-11" for ::1 at 2020-08-09 06:42:08 +0100
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1989-08-11"}
+  [1m[36mChart Load (0.2ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "11-08-1989"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:43:in `set_chart'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 2]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1649)
+
+
+Started GET "/api/charts/1989-08-11" for ::1 at 2020-08-09 06:42:17 +0100
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1989-08-11"}
+  [1m[36mChart Load (0.2ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "11-08-1989"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:43:in `set_chart'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 2]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 1649)
+
+
+Started GET "/api/charts/1984-01-08" for ::1 at 2020-08-09 06:42:30 +0100
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1984-01-08"}
+  [1m[36mChart Load (0.2ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "08-01-1984"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:43:in `set_chart'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 1]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1999)
+
+
+Started GET "/api/charts/8990-07-07" for ::1 at 2020-08-09 06:42:35 +0100
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"8990-07-07"}
+  [1m[36mChart Load (0.3ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "07-07-8990"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:43:in `set_chart'
+Completed 400 Bad Request in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 642)
+
+
+Started GET "/api/charts/1989-08-11" for ::1 at 2020-08-09 06:44:29 +0100
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1989-08-11"}
+  [1m[36mChart Load (0.2ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "11-08-1989"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:43:in `set_chart'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 2]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 1649)
+
+
+Started GET "/api/charts/1989-08-11" for ::1 at 2020-08-09 06:44:32 +0100
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1989-08-11"}
+  [1m[36mChart Load (0.2ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "11-08-1989"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:43:in `set_chart'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 2]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1649)
+
+
+Started GET "/api/charts/0007-08-08" for ::1 at 2020-08-09 06:44:35 +0100
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"0007-08-08"}
+  [1m[36mChart Load (0.3ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "08-08-0007"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:43:in `set_chart'
+Completed 400 Bad Request in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 642)
+
+
+Started GET "/api/charts/1989-08-11" for ::1 at 2020-08-09 06:45:34 +0100
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1989-08-11"}
+  [1m[36mChart Load (0.1ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "11-08-1989"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:43:in `set_chart'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 2]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 1649)
+
+
+Started GET "/api/charts/1989-08-11" for ::1 at 2020-08-09 06:45:36 +0100
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1989-08-11"}
+  [1m[36mChart Load (0.2ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "11-08-1989"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:43:in `set_chart'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 2]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1649)
+
+
+Started GET "/api/charts/8888-01-08" for ::1 at 2020-08-09 06:45:50 +0100
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"8888-01-08"}
+  [1m[36mChart Load (0.3ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "08-01-8888"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:43:in `set_chart'
+Completed 400 Bad Request in 3ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 642)
+
+
+Started GET "/api/charts/1989-08-11" for ::1 at 2020-08-09 09:24:25 +0100
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1989-08-11"}
+  [1m[36mChart Load (0.9ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "11-08-1989"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:43:in `set_chart'
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 2]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+Completed 200 OK in 20ms (Views: 1.3ms | ActiveRecord: 1.4ms | Allocations: 1684)
+
+
+Started GET "/api/charts/1989-08-11" for ::1 at 2020-08-09 09:25:30 +0100
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1989-08-11"}
+  [1m[36mChart Load (0.2ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "11-08-1989"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:43:in `set_chart'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 2]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1649)
+
+
+Started GET "/api/charts/1989-08-11" for ::1 at 2020-08-09 09:25:31 +0100
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1989-08-11"}
+  [1m[36mChart Load (0.2ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "11-08-1989"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:43:in `set_chart'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 2]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1649)
+
+
+Started GET "/api/charts/1989-08-11" for ::1 at 2020-08-09 09:26:54 +0100
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1989-08-11"}
+  [1m[36mChart Load (0.1ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "11-08-1989"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:43:in `set_chart'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 2]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1649)
+
+
+Started GET "/api/charts/1989-08-11" for ::1 at 2020-08-09 09:27:04 +0100
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1989-08-11"}
+  [1m[36mChart Load (0.2ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "11-08-1989"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:43:in `set_chart'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 2]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 1649)
+
+
+Started GET "/api/charts/1989-08-11" for ::1 at 2020-08-09 09:31:04 +0100
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1989-08-11"}
+  [1m[36mChart Load (0.1ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "11-08-1989"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:43:in `set_chart'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 2]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 1649)
+
+
+Started GET "/api/charts/1989-08-11" for ::1 at 2020-08-09 09:31:14 +0100
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1989-08-11"}
+  [1m[36mChart Load (0.1ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "11-08-1989"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:43:in `set_chart'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 2]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 1649)
+
+
+Started GET "/api/charts/1989-08-11" for ::1 at 2020-08-09 09:31:15 +0100
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1989-08-11"}
+  [1m[36mChart Load (0.1ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "11-08-1989"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:43:in `set_chart'
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 2]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 1649)
+
+
+Started GET "/api/charts/1989-08-11" for ::1 at 2020-08-09 09:31:50 +0100
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1989-08-11"}
+  [1m[36mChart Load (0.1ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "11-08-1989"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:43:in `set_chart'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 2]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1649)
+
+
+Started GET "/api/charts/1989-08-11" for ::1 at 2020-08-09 09:33:55 +0100
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1989-08-11"}
+  [1m[36mChart Load (0.1ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "11-08-1989"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:43:in `set_chart'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 2]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 1649)
+
+
+Started GET "/api/charts/1989-08-11" for ::1 at 2020-08-09 09:35:28 +0100
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1989-08-11"}
+  [1m[36mChart Load (0.5ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "11-08-1989"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:43:in `set_chart'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 2]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 1649)
+
+
+Started GET "/api/charts/1989-08-11" for ::1 at 2020-08-09 09:36:49 +0100
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1989-08-11"}
+  [1m[36mChart Load (0.1ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "11-08-1989"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:43:in `set_chart'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 2]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 1649)
+
+
+Started GET "/api/charts/1989-08-11" for ::1 at 2020-08-09 09:36:54 +0100
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1989-08-11"}
+  [1m[36mChart Load (0.1ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "11-08-1989"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:43:in `set_chart'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 2]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 1650)
+
+
+Started GET "/api/charts/1989-08-11" for ::1 at 2020-08-09 09:36:55 +0100
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1989-08-11"}
+  [1m[36mChart Load (0.2ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "11-08-1989"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:43:in `set_chart'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 2]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1649)
+
+
+Started GET "/api/charts/1989-08-11" for ::1 at 2020-08-09 09:44:24 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1989-08-11"}
+  [1m[36mChart Load (0.9ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "11-08-1989"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:43:in `set_chart'
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 2]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+Completed 200 OK in 12ms (Views: 0.6ms | ActiveRecord: 1.5ms | Allocations: 1684)
+
+
+Started GET "/api/charts/1989-08-11" for ::1 at 2020-08-09 09:44:47 +0100
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1989-08-11"}
+  [1m[36mChart Load (0.2ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "11-08-1989"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:43:in `set_chart'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 2]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1649)
+
+
+Started GET "/api/charts/1989-08-11" for ::1 at 2020-08-09 09:44:50 +0100
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1989-08-11"}
+  [1m[36mChart Load (0.2ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "11-08-1989"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:43:in `set_chart'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 2]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1649)
+
+
+Started GET "/api/charts/1989-08-11" for ::1 at 2020-08-09 10:02:59 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1989-08-11"}
+  [1m[36mChart Load (0.5ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "11-08-1989"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:44:in `set_chart'
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 2]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+Completed 200 OK in 23ms (Views: 0.3ms | ActiveRecord: 1.1ms | Allocations: 10941)
+
+
+Started GET "/api/charts/1984-01-08" for ::1 at 2020-08-09 10:03:06 +0100
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1984-01-08"}
+  [1m[36mChart Load (0.1ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "08-01-1984"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:44:in `set_chart'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 1]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 1999)
+
+
