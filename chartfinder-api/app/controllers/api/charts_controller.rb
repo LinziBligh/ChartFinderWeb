@@ -75,7 +75,7 @@ before_action :set_chart, only: [:show, :edit, :destroy]
         ##new_hash[:label] = song.css(".label").text.split.map(&:capitalize).join(' ')
         new_hash[:img_url] = song.css(".cover img").attribute("src").value
         
-        ##details= spotify_info(new_hash[:name], new_hash[:artist])
+        details= spotify_info(new_hash[:name], new_hash[:artist])
          ##maybe grab spotify id from here and add? or add all spotify details as one?
         ##new_hash[:img_url]=details
         ##spotify_id=details["tracks"]["items"][0]["album"]["artists"][0]["id"]
@@ -88,12 +88,10 @@ before_action :set_chart, only: [:show, :edit, :destroy]
     end
 
     def spotify_info(name, artist)
-      search_title= name.gsub(" ", "%20").downcase
-      search_artist=name.gsub(" ", "%20").downcase
-      connection = Excon.new("https://api.spotify.com/v1/search?q=#{search_artist}+#{search_title}&type=track", headers: {Authorization: 
-       "Bearer BQA3jzxi3gG9PtxKuWiO4lmHJWL0lD4W2G5g69bBYhG6NGAPsf05lUF-B-J68wC_G9J45knvyD5Y49_TEuEP9e__oqJOhBq_xtpYlefZbvk6LAmKuUkv1vp9N7iHw2j55NgK3EXgVig-9fep0g"}, :persistent => true)
-      response = connection.get
-      JSON.parse(response.body)
+      #search_title= name.gsub(" ", "%20").downcase
+      #search_artist=name.gsub(" ", "%20").downcase
+        track = RSpotify::Track.search(name)
+       puts track
     end
 
     def make_songs(songs, chart)

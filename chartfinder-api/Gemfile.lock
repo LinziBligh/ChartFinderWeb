@@ -209,6 +209,7 @@ DEPENDENCIES
   excon
   listen (~> 3.2)
   nokogiri
+  omniauth (~> 1.3, >= 1.3.1)
   pry
   puma (~> 4.1)
   rack-cors
