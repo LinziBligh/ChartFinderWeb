@@ -30709,3 +30709,657 @@ NoMethodError (undefined method `[]' for nil:NilClass):
 app/controllers/api/charts_controller.rb:81:in `block in scrape'
 app/controllers/api/charts_controller.rb:71:in `scrape'
 app/controllers/api/charts_controller.rb:16:in `show'
+Started GET "/api/charts/1989-08-11" for ::1 at 2020-08-10 21:20:14 +0100
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1989-08-11"}
+  [1m[36mChart Load (0.6ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "11-08-1989"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:53:in `set_chart'
+  [1m[36mSong Load (5.0ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 3]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+Completed 200 OK in 52ms (Views: 0.4ms | ActiveRecord: 6.6ms | Allocations: 26742)
+
+
+Started GET "/api/charts/1981-11-09" for ::1 at 2020-08-10 21:20:25 +0100
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1981-11-09"}
+  [1m[36mChart Load (0.2ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "09-11-1981"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:53:in `set_chart'
+Completed 500 Internal Server Error in 15467ms (ActiveRecord: 0.2ms | Allocations: 661752)
+
+
+  
+URI::InvalidURIError (URI must be ascii only "https://api.spotify.com/v1/search?q=l.o.v.e\u2026love+l.o.v.e\u2026love&type=track"):
+  
+app/controllers/api/charts_controller.rb:93:in `spotify_info'
+app/controllers/api/charts_controller.rb:78:in `block in scrape'
+app/controllers/api/charts_controller.rb:71:in `scrape'
+app/controllers/api/charts_controller.rb:16:in `show'
+Started GET "/api/charts/1989-08-11" for ::1 at 2020-08-10 21:20:55 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"1989-08-11"}
+  [1m[36mChart Load (0.6ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "11-08-1989"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:53:in `set_chart'
+  [1m[36mSong Load (2.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 3]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+Completed 200 OK in 33ms (Views: 0.4ms | ActiveRecord: 4.3ms | Allocations: 24188)
+
+
+Started GET "/api/charts/2012-12-12" for ::1 at 2020-08-10 21:21:00 +0100
+Processing by Api::ChartsController#show as */*
+  Parameters: {"id"=>"2012-12-12"}
+  [1m[36mChart Load (0.2ms)[0m  [1m[34mSELECT "charts".* FROM "charts" WHERE "charts"."date" = ? LIMIT ?[0m  [["date", "12-12-2012"], ["LIMIT", 1]]
+  ↳ app/controllers/api/charts_controller.rb:53:in `set_chart'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:17:in `show'
+  [1m[36mChart Create (2.7ms)[0m  [1m[32mINSERT INTO "charts" ("date", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["date", "12-12-2012"], ["country", "UK"], ["created_at", "2020-08-10 20:21:02.514173"], ["updated_at", "2020-08-10 20:21:02.514173"]]
+  ↳ app/controllers/api/charts_controller.rb:17:in `show'
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:17:in `show'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.3ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "The Power Of Love"], ["artist", "Gabrielle Aplin"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://coverartarchive.org/release/bf31b586-3c93-4edf-ad55-07141eb43185/2651949429-500.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.522523"], ["updated_at", "2020-08-10 20:21:02.522523"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Locked Out Of Heaven"], ["artist", "Bruno Mars"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://ecx.images-amazon.com/images/I/518Kz0k78ZL.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.525543"], ["updated_at", "2020-08-10 20:21:02.525543"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Troublemaker"], ["artist", "Olly Murs Ft Flo Rida"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://coverartarchive.org/release/15e32574-2f95-4642-9414-86a2cf4fe9ed/6474435670-500.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.528424"], ["updated_at", "2020-08-10 20:21:02.528424"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Beneath Your Beautiful"], ["artist", "Labrinth Ft Emeli Sande"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://ecx.images-amazon.com/images/I/51DVfbGuXCL.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.531190"], ["updated_at", "2020-08-10 20:21:02.531190"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Diamonds"], ["artist", "Rihanna"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://coverartarchive.org/release/40c6744d-1e8c-47ec-87b9-09579f7116c1/3583324050-500.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.533965"], ["updated_at", "2020-08-10 20:21:02.533965"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Little Things"], ["artist", "One Direction"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://ecx.images-amazon.com/images/I/61zKgxsEhOL.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.536727"], ["updated_at", "2020-08-10 20:21:02.536727"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.3ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Die Young"], ["artist", "Kesha"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://ecx.images-amazon.com/images/I/612dZ4SD%2BpL.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.539412"], ["updated_at", "2020-08-10 20:21:02.539412"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Try"], ["artist", "Pink"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://coverartarchive.org/release/6c83efd6-eb08-3335-9635-a39dab0a05a7/2560938312.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.542243"], ["updated_at", "2020-08-10 20:21:02.542243"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Gangnam Style"], ["artist", "Psy"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://coverartarchive.org/release/cab1dfdb-8295-45a1-808e-ace5a50b05b4/2025998865-500.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.545116"], ["updated_at", "2020-08-10 20:21:02.545116"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Girl On Fire"], ["artist", "Alicia Keys"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://coverartarchive.org/release/75f42fb4-2f38-4a54-90c2-f6f92552b7b1/2121228576-500.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.547833"], ["updated_at", "2020-08-10 20:21:02.547833"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Candy"], ["artist", "Robbie Williams"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://coverartarchive.org/release/24cdb6b9-439f-4dec-9e34-f4ebb6c92181/8036728020-500.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.550332"], ["updated_at", "2020-08-10 20:21:02.550332"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Ho Hey"], ["artist", "Lumineers"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://coverartarchive.org/release/7310a105-1a5d-44b2-b817-430fa0cb6670/2960482406-500.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.553178"], ["updated_at", "2020-08-10 20:21:02.553178"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "I Knew You Were Trouble"], ["artist", "Taylor Swift"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=/images/artwork/74b7ece674dc8e84b25d5b93f3e8e2b5.png"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.555863"], ["updated_at", "2020-08-10 20:21:02.555863"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Don't You Worry Child"], ["artist", "Swedish House Mafia/martin"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://ecx.images-amazon.com/images/I/41P3Q%2Btk8aL.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.558305"], ["updated_at", "2020-08-10 20:21:02.558305"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Fairytale Of New York"], ["artist", "Pogues Ft Kirsty Maccoll"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://ecx.images-amazon.com/images/I/51fgCeB2f3L.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.560863"], ["updated_at", "2020-08-10 20:21:02.560863"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Don't Stop The Party"], ["artist", "Pitbull Ft Tjr"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://ecx.images-amazon.com/images/I/61uscAIxkXL.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.563557"], ["updated_at", "2020-08-10 20:21:02.563557"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Skyfall"], ["artist", "Adele"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://coverartarchive.org/release/25d01e66-1415-4424-b634-c77151245266/2656835600-500.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.566191"], ["updated_at", "2020-08-10 20:21:02.566191"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Sight Of You"], ["artist", "Tulisa"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://coverartarchive.org/release/e59781f2-20df-4db2-9c99-2b6c53417618/2960894125-500.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.568732"], ["updated_at", "2020-08-10 20:21:02.568732"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "A Thousand Years"], ["artist", "Christina Perri"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://coverartarchive.org/release/0e32a277-a975-4b9d-aec0-01cf922e9e63/2144031940-500.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.571231"], ["updated_at", "2020-08-10 20:21:02.571231"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "All I Want For Christmas Is You"], ["artist", "Mariah Carey"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=https://images-eu.ssl-images-amazon.com/images/I/41YgWBjM4aL.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.573642"], ["updated_at", "2020-08-10 20:21:02.573642"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Not Giving In"], ["artist", "Rudimental/newman/clare"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://coverartarchive.org/release/d6f07d6c-3f5a-48cf-bf29-ee6a5fc14518/3923671957-500.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.576582"], ["updated_at", "2020-08-10 20:21:02.576582"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Gold Dust"], ["artist", "Dj Fresh"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://ecx.images-amazon.com/images/I/614%2BsnQpx4L.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.579077"], ["updated_at", "2020-08-10 20:21:02.579077"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Sweet Nothing"], ["artist", "Calvin Harris/florence Welch"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=/images/artwork/49f17ae433216ac4a5ea7a2a257919e9.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.581670"], ["updated_at", "2020-08-10 20:21:02.581670"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Dna"], ["artist", "Little Mix"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://coverartarchive.org/release/693d0c95-2276-4df0-a076-3f7d3d49a484/2960848823-500.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.584049"], ["updated_at", "2020-08-10 20:21:02.584049"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Can You Hear Me (ayayaya)"], ["artist", "Wiley/skepta/jme/ms D"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://ecx.images-amazon.com/images/I/618LyIonMJL.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.586512"], ["updated_at", "2020-08-10 20:21:02.586512"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Latch"], ["artist", "Disclosure Ft Sam Smith"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://coverartarchive.org/release/c6c1ad10-3268-4002-948d-7de5b67b1825/2652430612-500.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.588972"], ["updated_at", "2020-08-10 20:21:02.588972"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Give Me Love"], ["artist", "Ed Sheeran"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://coverartarchive.org/release/f583c0ab-4cbd-4833-b36b-711aa56dc49e/6559518133-500.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.591312"], ["updated_at", "2020-08-10 20:21:02.591312"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "One More Night"], ["artist", "Maroon 5"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://coverartarchive.org/release/4732621d-735e-4557-bdc7-2c28a6eedc76/1283774345-500.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.593804"], ["updated_at", "2020-08-10 20:21:02.593804"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.3ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Hall Of Fame"], ["artist", "Script Ft Will I Am"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://coverartarchive.org/release/9fe25ac0-1257-4da2-9c40-265dec9f158a/5333229935-500.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.596296"], ["updated_at", "2020-08-10 20:21:02.596296"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Something New"], ["artist", "Girls Aloud"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://coverartarchive.org/release/f1419aac-5db9-4002-ab20-5278d84e8cca/2312092543-500.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.598932"], ["updated_at", "2020-08-10 20:21:02.598932"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "I Wish It Could Be Christmas Everyday"], ["artist", "Wizzard"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://ecx.images-amazon.com/images/I/61ybZxkZ0CL.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.601457"], ["updated_at", "2020-08-10 20:21:02.601457"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Six Degrees Of Separation"], ["artist", "Script"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://ecx.images-amazon.com/images/I/41Un9%2BaN4hL.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.603934"], ["updated_at", "2020-08-10 20:21:02.603934"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Beauty And A Beat"], ["artist", "Justin Bieber Ft Nicki Minaj"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://ecx.images-amazon.com/images/I/51RenmYi%2B1L.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.606274"], ["updated_at", "2020-08-10 20:21:02.606274"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Last Christmas"], ["artist", "Wham"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=https://images-eu.ssl-images-amazon.com/images/I/513FYXui40L.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.608755"], ["updated_at", "2020-08-10 20:21:02.608755"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.3ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Merry Xmas Everybody"], ["artist", "Slade"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://coverartarchive.org/release/6c0bfce0-9302-49d8-ba2a-6fbe19daf511/7326854477-500.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.639157"], ["updated_at", "2020-08-10 20:21:02.639157"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "We Are Never Ever Getting Back Together"], ["artist", "Taylor Swift"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://coverartarchive.org/release/e213175f-dfcb-42a8-986f-3452c44214c2/1803109213-500.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.642766"], ["updated_at", "2020-08-10 20:21:02.642766"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Do They Know It's Christmas"], ["artist", "Band Aid"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=/images/artwork/959725d26f4b0fbd7da36d526f4bda23.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.646272"], ["updated_at", "2020-08-10 20:21:02.646272"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Tidal Wave"], ["artist", "Sub Focus Ft Alpines"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://ecx.images-amazon.com/images/I/61hHGhpmMtL.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.649763"], ["updated_at", "2020-08-10 20:21:02.649763"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Lies"], ["artist", "Burns"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://coverartarchive.org/release/cd69d615-1d75-4733-8283-82ab60b8321e/2309052458-500.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.652667"], ["updated_at", "2020-08-10 20:21:02.652667"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Wonder"], ["artist", "Naughty Boy Ft Emeli Sande"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://ecx.images-amazon.com/images/I/510wrEZWpDL.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.655222"], ["updated_at", "2020-08-10 20:21:02.655222"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Time After Time"], ["artist", "Angel"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://ecx.images-amazon.com/images/I/51HXjFsJsjL.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.657699"], ["updated_at", "2020-08-10 20:21:02.657699"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "The Power Of Love"], ["artist", "Frankie Goes To Hollywood"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://coverartarchive.org/release/f076cad1-c9dd-45ae-9676-937fde009bd3/6323213959-500.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.660195"], ["updated_at", "2020-08-10 20:21:02.660195"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Kiss You"], ["artist", "One Direction"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://ecx.images-amazon.com/images/I/51P-2L3U2HL.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.662688"], ["updated_at", "2020-08-10 20:21:02.662688"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Shine Ya Light"], ["artist", "Rita Ora"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://ecx.images-amazon.com/images/I/51eZmN-2MhL.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.665128"], ["updated_at", "2020-08-10 20:21:02.665128"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Love Is Easy"], ["artist", "Mcfly"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://coverartarchive.org/release/77b3c24e-0cc2-48da-b7dc-f5b8b2cb615f/4200367656-500.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.667694"], ["updated_at", "2020-08-10 20:21:02.667694"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Merry Christmas Everyone"], ["artist", "Shakin' Stevens"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://ecx.images-amazon.com/images/I/51ODi3j7bjL.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.670272"], ["updated_at", "2020-08-10 20:21:02.670272"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "I Will Wait"], ["artist", "Mumford & Sons"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://coverartarchive.org/release/add63198-b000-40a8-a4e0-819844287489/3358345786-500.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.672782"], ["updated_at", "2020-08-10 20:21:02.672782"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Rest Of My Life"], ["artist", "Ludacris/usher/david Guetta"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://ecx.images-amazon.com/images/I/41QlkmwQZGL.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.675157"], ["updated_at", "2020-08-10 20:21:02.675157"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "I Cry"], ["artist", "Flo Rida"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://ecx.images-amazon.com/images/I/51gXkNwCqsL.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.677610"], ["updated_at", "2020-08-10 20:21:02.677610"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Blow Me (one Last Kiss)"], ["artist", "Pink"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://ecx.images-amazon.com/images/I/51MRgoIVq-L.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.680181"], ["updated_at", "2020-08-10 20:21:02.680181"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.3ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Isn't She Lovely"], ["artist", "Jimmy Higham & Jon Walmsley"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://ecx.images-amazon.com/images/I/51AuZZXZKwL.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.682782"], ["updated_at", "2020-08-10 20:21:02.682782"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Anything Could Happen"], ["artist", "Ellie Goulding"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://ecx.images-amazon.com/images/I/51l7%2BwwKc3L.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.685509"], ["updated_at", "2020-08-10 20:21:02.685509"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Live While We're Young"], ["artist", "One Direction"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://ecx.images-amazon.com/images/I/61JkL%2BGvaRL.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.687986"], ["updated_at", "2020-08-10 20:21:02.687986"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Driving Home For Christmas"], ["artist", "Chris Rea"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://coverartarchive.org/release/ffa844ee-788a-464c-adac-be8a009c2df4/6130340520-500.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.690464"], ["updated_at", "2020-08-10 20:21:02.690464"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Wings"], ["artist", "Little Mix"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://coverartarchive.org/release/419fda0e-660d-44f8-bf3b-51e04586df21/2468992765-500.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.692948"], ["updated_at", "2020-08-10 20:21:02.692948"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Radioactive"], ["artist", "Imagine Dragons"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://ecx.images-amazon.com/images/I/41qRE5w0uLL.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.695324"], ["updated_at", "2020-08-10 20:21:02.695324"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Rockin' Around The Christmas Tree"], ["artist", "Brenda Lee"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=https://images-eu.ssl-images-amazon.com/images/I/612sl6ML8oL.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.697742"], ["updated_at", "2020-08-10 20:21:02.697742"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "We Are Young"], ["artist", "Fun Ft Janelle Monae"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://coverartarchive.org/release/65ce3689-5b6d-4949-b05e-0418af89acfd/2086632563-500.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.700173"], ["updated_at", "2020-08-10 20:21:02.700173"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Spectrum"], ["artist", "Florence & The Machine"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=/images/artwork/1a6ac7ca1c05b67a36bf2f2030d95a61.png"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.702616"], ["updated_at", "2020-08-10 20:21:02.702616"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Million Voices"], ["artist", "Otto Knows"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://coverartarchive.org/release/aeba7987-9f6f-4a38-9495-5736f5556795/2468973264-500.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.705126"], ["updated_at", "2020-08-10 20:21:02.705126"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Va Va Voom"], ["artist", "Nicki Minaj"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://ecx.images-amazon.com/images/I/61usH7WnjyL.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.707675"], ["updated_at", "2020-08-10 20:21:02.707675"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Bangarang"], ["artist", "Skrillex Ft Sirah"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://ecx.images-amazon.com/images/I/61G8uLZ-rML.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.710074"], ["updated_at", "2020-08-10 20:21:02.710074"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.3ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Good Time"], ["artist", "Owl City/carly Rae Jepsen"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://coverartarchive.org/release/f1a83d2f-55b1-46cb-9bac-63cdaabf55b7/1386328689-500.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.712648"], ["updated_at", "2020-08-10 20:21:02.712648"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Standing In The Dark"], ["artist", "Lawson"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://ecx.images-amazon.com/images/I/51gWvadgzIL.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.715222"], ["updated_at", "2020-08-10 20:21:02.715222"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Some Nights"], ["artist", "Fun"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://coverartarchive.org/release/ed85d3ab-9b66-4530-b678-816d0db9fe73/2538251751.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.717691"], ["updated_at", "2020-08-10 20:21:02.717691"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Sun"], ["artist", "Two Door Cinema Club"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://coverartarchive.org/release/c85c21fe-918e-4602-b19d-fb811ec27e46/4200325826-500.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.720226"], ["updated_at", "2020-08-10 20:21:02.720226"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Call Me Maybe"], ["artist", "Carly Rae Jepsen"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://coverartarchive.org/release/c0d3287e-6924-4f78-b1c1-29126cb30dd2/1293719326-500.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.722660"], ["updated_at", "2020-08-10 20:21:02.722660"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Let Me Love You (until You Learn To Love"], ["artist", "Ne-yo"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://coverartarchive.org/release/e44a2931-ee4e-417d-8183-e97d57dd0128/2142292874-500.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.725121"], ["updated_at", "2020-08-10 20:21:02.725121"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Let It Snow Let It Snow Let It Snow"], ["artist", "Dean Martin"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=https://images-eu.ssl-images-amazon.com/images/I/619xwQt1AmL.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.727671"], ["updated_at", "2020-08-10 20:21:02.727671"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.3ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "I Feel It In My Bones"], ["artist", "Killers/ryan Pardey"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://coverartarchive.org/release/db2e039a-78dd-44b9-819e-e304e441f7b7/2962775025-500.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.730070"], ["updated_at", "2020-08-10 20:21:02.730070"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Catch My Breath"], ["artist", "Kelly Clarkson"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://coverartarchive.org/release/ea2f2e4d-7f4e-4345-852d-5f1054ab6bcf/3355163588-500.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.733394"], ["updated_at", "2020-08-10 20:21:02.733394"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Bom Bom"], ["artist", "Sam & The Womp"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://coverartarchive.org/release/4a143319-cfdf-4412-95d8-6edfd0642245/6047298259-500.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.736957"], ["updated_at", "2020-08-10 20:21:02.736957"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Read All About It Pt 3"], ["artist", "Emeli Sande"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://ecx.images-amazon.com/images/I/51Tq3DaS5eL.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.739407"], ["updated_at", "2020-08-10 20:21:02.739407"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "She Wolf (falling To Pieces)"], ["artist", "David Guetta Ft Sia"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://coverartarchive.org/release/d65d2e1a-a855-497a-b1c4-7c1fe4760f9b/2069982836-500.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.741804"], ["updated_at", "2020-08-10 20:21:02.741804"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Step Into Christmas"], ["artist", "Elton John"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://coverartarchive.org/release/e7623c4c-25ee-429a-880e-c6276f743c8b/1636976792-500.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.744195"], ["updated_at", "2020-08-10 20:21:02.744195"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Somebody That I Used To Know"], ["artist", "Gotye Ft Kimbra"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://ecx.images-amazon.com/images/I/519ts%2BRmOSL.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.746565"], ["updated_at", "2020-08-10 20:21:02.746565"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "212"], ["artist", "Azealia Banks Ft Lazy Jay"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://coverartarchive.org/release/f530084c-5960-4ff5-96af-8e401264be8c/1362646629-500.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.749161"], ["updated_at", "2020-08-10 20:21:02.749161"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Playing With Fire"], ["artist", "Plan B"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://ecx.images-amazon.com/images/I/511G8rpx8UL.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.751580"], ["updated_at", "2020-08-10 20:21:02.751580"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Stay Another Day"], ["artist", "East 17"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://ecx.images-amazon.com/images/I/51abKL5NikL.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.754325"], ["updated_at", "2020-08-10 20:21:02.754325"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "I Found You"], ["artist", "Wanted"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://ecx.images-amazon.com/images/I/61heTQlAhcL.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.756644"], ["updated_at", "2020-08-10 20:21:02.756644"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Happy Xmas (war Is Over)"], ["artist", "John & Yoko/plastic Ono Band"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://coverartarchive.org/release/e7c259c9-b0b6-4c04-92ba-65a021bd48ad/3854381511-500.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.759131"], ["updated_at", "2020-08-10 20:21:02.759131"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Figure 8"], ["artist", "Ellie Goulding"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=/images/artwork/8719fac6d66f175b9dc57f24053889e5.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.761558"], ["updated_at", "2020-08-10 20:21:02.761558"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "What Makes You Beautiful"], ["artist", "One Direction"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://ecx.images-amazon.com/images/I/61Zjh4rRVsL.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.763998"], ["updated_at", "2020-08-10 20:21:02.763998"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.3ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Midnight City"], ["artist", "M83"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://ecx.images-amazon.com/images/I/61ghEXcLWyL.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.778264"], ["updated_at", "2020-08-10 20:21:02.778264"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.3ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "N****s In Paris"], ["artist", "Jay-z & Kanye West"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://ecx.images-amazon.com/images/I/410pXOsj2KL.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.781420"], ["updated_at", "2020-08-10 20:21:02.781420"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Holdin' On"], ["artist", "Monsta"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://ecx.images-amazon.com/images/I/41l0oK0iW8L.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.784532"], ["updated_at", "2020-08-10 20:21:02.784532"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.3ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Love Story"], ["artist", "Taylor Swift"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://ecx.images-amazon.com/images/I/51euLsbEDjL.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.787258"], ["updated_at", "2020-08-10 20:21:02.787258"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Pound The Alarm"], ["artist", "Nicki Minaj"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://ecx.images-amazon.com/images/I/61usH7WnjyL.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.790354"], ["updated_at", "2020-08-10 20:21:02.790354"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Feel The Love"], ["artist", "Rudimental Ft John Newman"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://coverartarchive.org/release/6088000f-a1e1-41ba-8e5a-b4680041951e/1624629877-500.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.793004"], ["updated_at", "2020-08-10 20:21:02.793004"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Never Tear Us Apart"], ["artist", "Paloma Faith"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://coverartarchive.org/release/f2045200-4d0f-4338-bdbd-790725b10054/2468961456-500.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.795591"], ["updated_at", "2020-08-10 20:21:02.795591"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Doom And Gloom"], ["artist", "Rolling Stones"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=/images/artwork/01e2db483d89dee33810fa03cec122c7.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.798088"], ["updated_at", "2020-08-10 20:21:02.798088"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Drinking From The Bottle"], ["artist", "Calvin Harris Ft Tinie Tempah"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=/images/artwork/cea4c58591281faba337bbdfd06f56d3.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.800811"], ["updated_at", "2020-08-10 20:21:02.800811"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Back In Black"], ["artist", "Ac/dc"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://coverartarchive.org/release/230f9360-ec96-41bc-b684-2a39915e3d2b/3891927856-500.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.803373"], ["updated_at", "2020-08-10 20:21:02.803373"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "How We Do (party)"], ["artist", "Rita Ora"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://coverartarchive.org/release/d5bff73a-47b5-4c9e-a75e-0ef6747e413b/1804110926-500.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.805828"], ["updated_at", "2020-08-10 20:21:02.805828"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Little Talks"], ["artist", "Of Monsters & Men"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://coverartarchive.org/release/54b43e5e-69f2-4c10-b491-2acd22e770d4/3780835192-500.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.808298"], ["updated_at", "2020-08-10 20:21:02.808298"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Wonderful Christmastime"], ["artist", "Paul Mccartney"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=/images/artwork/0ce3d027c0941570dea2ae1d33b0a350.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.810883"], ["updated_at", "2020-08-10 20:21:02.810883"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Payphone"], ["artist", "Maroon 5 Ft Wiz Khalifa"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=/images/artwork/dae98bffa58f274f627b26e96cac8047.png"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.813445"], ["updated_at", "2020-08-10 20:21:02.813445"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.3ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Different"], ["artist", "Robbie Williams"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://coverartarchive.org/release/4bc14748-a382-4af9-957c-b52fea47a33e/5223800834-500.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.815898"], ["updated_at", "2020-08-10 20:21:02.815898"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Still Dre"], ["artist", "Dr Dre Ft Snoop Dogg"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=http://ecx.images-amazon.com/images/I/31H611GNGZL.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.818628"], ["updated_at", "2020-08-10 20:21:02.818628"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Create (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "artist", "img_url", "chart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Santa Baby"], ["artist", "Kylie Minogue"], ["img_url", "https://d35iaml2i6ojwd.cloudfront.net/img/small?url=/images/artwork/c86bf12725b700c8ec749fcea82f460c.jpg"], ["chart_id", 46], ["created_at", "2020-08-10 20:21:02.821217"], ["updated_at", "2020-08-10 20:21:02.821217"]]
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/charts_controller.rb:102:in `block in make_songs'
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."chart_id" = ?[0m  [["chart_id", 46]]
+  ↳ app/services/chart_serializer.rb:16:in `to_serialized_json'
+Completed 200 OK in 1858ms (Views: 0.2ms | ActiveRecord: 84.6ms | Allocations: 275275)
+
+
