@@ -72,23 +72,18 @@ before_action :set_chart, only: [:show, :edit, :destroy]
         new_hash = {}
         new_hash[:name] = song.css(".title a").text.split.map(&:capitalize).join(' ')
         new_hash[:artist] = song.css(".artist a").text.split.map(&:capitalize).join(' ')
-        ##new_hash[:label] = song.css(".label").text.split.map(&:capitalize).join(' ')
+        new_hash[:label] = song.css(".label").text.split.map(&:capitalize).join(' ')
         new_hash[:img_url] = song.css(".cover img").attribute("src").value
+        #new_hash[:spotify_id]= find_spotify_id(new_hash[:name])
         
-        details= spotify_info(new_hash[:name])
-        puts details
-         ##maybe grab spotify id from here and add? or add all spotify details as one?
-        ##new_hash[:img_url]=details
-        ##spotify_id=details["tracks"]["items"][0]["album"]["artists"][0]["id"]
-        ##not right! artist page
-       
         
+
         @song_array << new_hash
         end
         @song_array
     end
 
-    def spotify_info(name)
+    def find_spotify_id(name)
         track = RSpotify::Track.search(name)
         track.first ? track.first.id : ""
     end
