@@ -76,6 +76,7 @@ before_action :set_chart, only: [:show, :edit, :destroy]
         new_hash[:img_url] = song.css(".cover img").attribute("src").value
         
         track = find_spotify_details(new_hash[:name])
+        #puts track.first.preview_url
        
         if track.first 
           new_hash[:spotify_id]=track.first.id 

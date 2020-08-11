@@ -3,7 +3,10 @@ import './Chart.css'
 
 
 const Song = (props) =>
-(<div className="SongCard" key={props.song.id}><p>{props.song.name} - 
-{props.song.artist}</p> <img className="SongImage" src={props.song.img_url} alt={props.song.name}></img></div>)
-
+(<div><div className="SongCard" key={props.song.id}><p>{props.song.name} - 
+{props.song.artist}</p> <img className="SongImage" src={props.song.img_url} alt={props.song.name}></img></div>
+<div>
+<iframe class="player-spotify" src={`https://embed.spotify.com/?uri=spotify:track:${props.song.spotify_id}`} width="300" height="80" frameborder="0" allowtransparency="true"></iframe>)
+</div>
+</div>)
 export default Song
