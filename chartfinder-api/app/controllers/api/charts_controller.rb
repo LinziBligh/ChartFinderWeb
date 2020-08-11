@@ -67,16 +67,18 @@ before_action :set_chart, only: [:show, :edit, :destroy]
       songs = doc.css("table.chart-positions div.track")
       @song_array = []
 
-        
+        position = 1
         songs.each do |song|
         new_hash = {}
         new_hash[:name] = song.css(".title a").text.split.map(&:capitalize).join(' ')
         new_hash[:artist] = song.css(".artist a").text.split.map(&:capitalize).join(' ')
         new_hash[:label] = song.css(".label").text.split.map(&:capitalize).join(' ')
         new_hash[:img_url] = song.css(".cover img").attribute("src").value
+        new_hash[:position] = position
+        position=position+1
         
         track = find_spotify_details(new_hash[:name])
-        #puts track.first.preview_url
+    
        
         if track.first 
           new_hash[:spotify_id]=track.first.id 

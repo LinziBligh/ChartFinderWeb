@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2020_08_06_091845) do
     t.string "img_url"
     t.string "spotify_id"
     t.string "label"
+    t.integer "position"
     t.integer "chart_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
