@@ -74,7 +74,7 @@ before_action :set_chart, only: [:show, :edit, :destroy]
         new_hash[:artist] = song.css(".artist a").text.split.map(&:capitalize).join(' ')
         new_hash[:label] = song.css(".label").text.split.map(&:capitalize).join(' ')
         new_hash[:img_url] = song.css(".cover img").attribute("src").value
-        #new_hash[:spotify_id]= find_spotify_id(new_hash[:name])
+        new_hash[:spotify_id]= find_spotify_id(new_hash[:name])
         
         
 

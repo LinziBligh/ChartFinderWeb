@@ -8,7 +8,7 @@ class ChartSerializer
     options = {
       include:{
         songs:{
-          only:[:name, :artist, :img_url, :id]
+          only:[:name, :artist, :img_url, :id, :spotify_id, :label]
         }
       }
     }
