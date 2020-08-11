@@ -74,18 +74,23 @@ before_action :set_chart, only: [:show, :edit, :destroy]
         new_hash[:artist] = song.css(".artist a").text.split.map(&:capitalize).join(' ')
         new_hash[:label] = song.css(".label").text.split.map(&:capitalize).join(' ')
         new_hash[:img_url] = song.css(".cover img").attribute("src").value
-        new_hash[:spotify_id]= find_spotify_id(new_hash[:name])
         
-        
+        track = find_spotify_details(new_hash[:name])
+       
+        if track.first 
+          new_hash[:spotify_id]=track.first.id 
+          new_hash[:img_url] = track.first.album.images.first["url"]
+        else
+         new_hash[:spotify_id]= ""
+        end
 
         @song_array << new_hash
         end
         @song_array
     end
 
-    def find_spotify_id(name)
+    def find_spotify_details(name)
         track = RSpotify::Track.search(name)
-        track.first ? track.first.id : ""
     end
 
     def make_songs(songs, chart)
