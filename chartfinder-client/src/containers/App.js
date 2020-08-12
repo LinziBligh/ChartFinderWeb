@@ -16,7 +16,7 @@ class App extends Component {
   }
 
   componentDidMount(){
-    fetch('http://localhost:3001/api/charts/1989-08-11')
+    fetch('http://localhost:3001/api/charts/1984-08-01')
     .then(response => response.json())
     .then (chart=> this.setState({chart, loading: false}))
   }
