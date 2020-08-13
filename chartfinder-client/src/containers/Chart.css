@@ -31,6 +31,7 @@ background: whitesmoke;
 
 .SongCard:hover {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  transform: translate3D(0,-1px,0) scale(1.03);
 }
 
 
