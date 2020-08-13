@@ -31,6 +31,7 @@ class App extends Component {
 
 
   render (){
+    debugger
     return(
     <div className="App">
     {this.state.loading ? <h1>Loading......</h1>  :

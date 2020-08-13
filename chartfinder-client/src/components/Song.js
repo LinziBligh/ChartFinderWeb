@@ -11,6 +11,6 @@ const Song = (props) =>
 
 <img className="SongImage" src={props.song.img_url} alt={props.song.name}></img>
 
-{<iframe class="player-spotify" title={`${props.song.name}`} src={`https://embed.spotify.com/?uri=spotify:track:${props.song.spotify_id}`} width="300" height="80" frameborder="0" allowtransparency="true"></iframe>}
+{<iframe className="player-spotify" title={`${props.song.name}`} src={`https://embed.spotify.com/?uri=spotify:track:${props.song.spotify_id}`} width="300" height="80" frameBorder="0" allowtransparency="true"></iframe>}
 </div>)
 export default Song
