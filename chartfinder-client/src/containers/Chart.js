@@ -1,10 +1,12 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import './Chart.css'
 import SongCard from '../components/SongCard'
 import DateForm from './DateForm'
+import { connect } from 'react-redux'
 
 
 class Chart extends Component{
+ 
   
   render(){
     return(
@@ -19,11 +21,23 @@ class Chart extends Component{
         </div>
         </div>
       )
-
-  
-  
   }
 }
 
-export default Chart
+//constructor(props){
+//  super(props)
+//  this.state={
+ //   chart: {},
+ //   loading: true,
+ //   date: "",
+//  }
+//}
+
+const mapStateToProps = (state) => {
+  return ({
+    charts: state.charts
+  })
+}
+
+export default connect(mapStateToProps) (Chart)
 

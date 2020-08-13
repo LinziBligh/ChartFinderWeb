@@ -1,19 +1,11 @@
 import {createStore, compose, applyMiddleware, combineReducers} from 'redux'
 import thunk from 'redux-thunk'
+import charts from './reducers/charts'
 
-const chartsReducer = (state=[], action) => {
-  switch (action.type) {
-    case 'GET_CHARTS_SUCCESS':
-      return action.charts;
-      default:
-        return state;
-  }
-}
 
-let chart = chartsReducer(null, {type:'@@INIT'});
 
 const reducers = combineReducers({
-  charts:chartsReducer
+  charts
 })
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
