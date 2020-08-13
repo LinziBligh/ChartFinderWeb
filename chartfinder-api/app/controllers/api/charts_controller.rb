@@ -89,7 +89,7 @@ before_action :set_chart, only: [:show, :edit, :destroy]
 
         @song_array << new_hash
         end
-        @song_array
+        @song_array = @song_array.first(40)
     end
 
     def find_spotify_details(name)
