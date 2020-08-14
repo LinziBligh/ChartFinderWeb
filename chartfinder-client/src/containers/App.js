@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import './App.css';
-import Chart from './Chart'
+import './Chart.css';
+import ChartContainer from './ChartContainer'
+import DateForm from './DateForm'
 
 
 
@@ -16,7 +17,7 @@ class App extends Component {
   }
 
   componentDidMount(){
-    fetch('http://localhost:3001/api/charts/1984-08-01')
+    fetch('http://localhost:3001/api/charts/1984-08-01') // be good to make this random
     .then(response => response.json())
     .then (chart=> this.setState({chart, loading: false}))
   }
@@ -33,8 +34,10 @@ class App extends Component {
   render (){
     return(
     <div className="App">
+      <h1>ChartFinder</h1>
+      <DateForm submitDateForm={this.submitDateForm}/>
     {this.state.loading ? <h1>Loading......</h1>  :
-    <Chart chart={this.state.chart} submitDateForm={this.submitDateForm} key={this.state.chart.id}/>}
+    <ChartContainer chart={this.state.chart} />}
     </div>)
 }
 }

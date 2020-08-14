@@ -1,0 +1,9 @@
+import React from 'react'
+
+const Date = (props) =>(
+  <div>
+ <h3>{props.chart.date}</h3>
+  <p>{props.chart.country}</p>
+  </div>)
+
+        export default Date
