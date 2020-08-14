@@ -29,7 +29,8 @@ class DateForm extends Component {
         <br />
         <form onSubmit={this.handleSubmit}>
           <input type="date" onChange={event=>this.handleOnChange(event)} value={this.state.date}/>
-        <input type="submit" />
+        <input type="submit" name="chart" value="Find Chart" />
+        <input type="submit" name="chart" value="Generate Birthday Playlist" />
         </form>
        </div>)
   }

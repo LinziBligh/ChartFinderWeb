@@ -3,9 +3,9 @@ import React from 'react'
 
 const Song = (props) =>
 (
-<div  key={props.song.id}>
+<div  className ="Song-h2" key={props.song.id}>
 
-<h1>{props.song.position}</h1>
+<h2>{props.song.position}</h2>
 <p>{props.song.name} - 
 {props.song.artist}</p> 
 
