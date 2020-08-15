@@ -3,16 +3,21 @@ require 'open-uri'
 class Api::BirthdaysController<ApplicationController
 before_action :set_birthday, only: [:show, :edit, :destroy]
 
-  def index
+  
+#route not being used
+def index
     birthdays=Birthday.all
     render json: ChartSerializer.new(birthdays).to_serialized_json 
   end
 #using same serialiser, maybe could rename to something generic?
 
-  def show
+ 
+def show
     if @birthday
      render json: ChartSerializer.new(@birthday).to_serialized_json
     else
+      #for each date in date array, scrape 1st song.
+      birthday_dates(@date)
       date_to_url(@date)
       songs = scrape(@url)
       birthday = Birthday.create(date: @date, country: "UK")
@@ -55,6 +60,18 @@ before_action :set_birthday, only: [:show, :edit, :destroy]
       @date = params[:id].split("-").reverse.join("-")
       @birthday = Birthday.find_by(date: @date)
       
+    end
+
+    def birthday_dates(dob)
+      anniversaries=[]
+      start_date = dob.split("-")
+      this_year = Time.now.strftime("%Y").to_i
+
+      until start_date[2].to_i == this_year
+        anniversaries<<start_date.join("-")
+        start_date[2] = start_date[2].to_i+1
+      end
+      anniversaries
     end
 
     ##helper method to set date to work with url
