@@ -15,10 +15,15 @@ class DateForm extends Component {
     })
   }
 
-  handleSubmit = event => {
+  handleChartSubmit = event => {
     event.preventDefault();
     this.props.submitDateForm(this.state.date)
   }
+
+  handleBirthdaySubmit = event => {
+    event.preventDefault();
+    this.props.submitBirthdayForm(this.state.date)
+  } //need to do something different with this to get Birthday playlist
 
   render (){
     return(
@@ -27,10 +32,10 @@ class DateForm extends Component {
         Pick A Date
         <br />
         <br />
-        <form onSubmit={this.handleSubmit}>
+        <form >
           <input type="date" onChange={event=>this.handleOnChange(event)} value={this.state.date}/>
-        <input type="submit" name="chart" value="Find Chart" />
-        <input type="submit" name="chart" value="Generate Birthday Playlist" />
+        <button type="submit" onClick={this.handleChartSubmit}>Find Chart</button>
+        <button type="submit" onClick={this.handleBirthdaySubmit}>Generate Birthday Playlist</button>
         </form>
        </div>)
   }

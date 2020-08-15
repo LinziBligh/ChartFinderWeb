@@ -30,12 +30,20 @@ class App extends Component {
     )
   }
 
+  submitBirthdayForm = date =>{
+    this.setState({...this.state, loading: true, date: date});
+    fetch(`http://localhost:3001/api/birthdays/${date}`)
+    .then(response => response.json())
+    .then (chart=> this.setState({chart, loading: false, date: date})
+    )
+  }
+
 
   render (){
     return(
     <div className="App">
       <h1>ChartFinder</h1>
-      <DateForm submitDateForm={this.submitDateForm}/>
+      <DateForm submitDateForm={this.submitDateForm} submitBirthdayForm={this.submitBirthdayForm}/>
     {this.state.loading ? <h1>Loading......</h1>  :
     <ChartContainer chart={this.state.chart} />}
     </div>)

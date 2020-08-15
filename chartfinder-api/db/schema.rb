@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_06_091845) do
+ActiveRecord::Schema.define(version: 2020_08_15_140951) do
+
+  create_table "birthdays", force: :cascade do |t|
+    t.string "date"
+    t.string "country"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "charts", force: :cascade do |t|
     t.string "date"
