@@ -16,16 +16,17 @@ def show
     if @birthday
      render json: ChartSerializer.new(@birthday).to_serialized_json
     else
-      #for each date in date array, scrape 1st song.
-      birthday_dates(@date)
-      date_to_url(@date)
-      songs = scrape(@url)
       birthday = Birthday.create(date: @date, country: "UK")
-      birthday.save
-      ##for each song in songs, make it a new song object and pushit into chart.
-      make_songs(songs, birthday)
-      render json: ChartSerializer.new(birthday).to_serialized_json
-    end
+      birthday_dates(@date).each{|date|
+      date_to_url(date)
+      song = scrape(@url)
+      make_song(song, birthday)
+      birthday.save}
+      end
+
+      @birthday = Birthday.find_by(date: @date)
+      render json: ChartSerializer.new(@birthday).to_serialized_json
+      
   end
 
 
@@ -84,43 +85,36 @@ def show
     def scrape(url)
       html = open(url)
       doc = Nokogiri::HTML(html)
-      songs = doc.css("table.chart-positions div.track")
-      @song_array = []
+      song = doc.css("table.chart-positions div.track")[0]
+      
 
-        position = 1
-        songs.each do |song|
-        new_hash = {}
-        new_hash[:name] = song.css(".title a").text.split.map(&:capitalize).join(' ')
-        new_hash[:artist] = song.css(".artist a").text.split.map(&:capitalize).join(' ')
-        new_hash[:label] = song.css(".label").text.split.map(&:capitalize).join(' ')
-        new_hash[:img_url] = song.css(".cover img").attribute("src").value
-        new_hash[:position] = position
-        position=position+1
+        number_one = {}
+        number_one[:name] = song.css(".title a").text.split.map(&:capitalize).join(' ')
+        number_one[:artist] = song.css(".artist a").text.split.map(&:capitalize).join(' ')
+        number_one[:label] = song.css(".label").text.split.map(&:capitalize).join(' ')
+        number_one[:img_url] = song.css(".cover img").attribute("src").value
+        number_one[:position] = 1
         
-        track = find_spotify_details(new_hash[:name])
+        
+        track = find_spotify_details(number_one[:name])
     
        
         if track.first 
-          new_hash[:spotify_id]=track.first.id 
-          new_hash[:img_url] = track.first.album.images.first["url"]
+          number_one[:spotify_id]=track.first.id 
+          number_one[:img_url] = track.first.album.images.first["url"]
         else
-         new_hash[:spotify_id]= ""
+         number_one[:spotify_id]= ""
         end
-
-        @song_array << new_hash
-        end
-        @song_array = @song_array.first(40)
+        number_one
     end
 
     def find_spotify_details(name)
         track = RSpotify::Track.search(name)
     end
 
-    def make_songs(songs, birthday)
-      songs.each do |song|
+    def make_song(song, birthday)
         @song = birthday.songs.build(song)
         @song.save
-      end
     end
 
 
