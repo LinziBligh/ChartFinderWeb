@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2020_08_15_140951) do
     t.string "label"
     t.integer "position"
     t.integer "chart_id"
+    t.integer "birthday_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
