@@ -4,7 +4,7 @@ import Date from '../components/Date'
 
 
 const ChartContainer = (props) =>
-(<div class="ChartContainer"><Date chart={props.chart} />
+(<div className="ChartContainer"><Date chart={props.chart} />
 <Chart chart={props.chart} key={props.chart.id} birthday={props.birthday}/>
 </div>
 )

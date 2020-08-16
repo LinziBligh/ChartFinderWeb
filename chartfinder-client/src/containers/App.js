@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Chart.css';
 import ChartContainer from './ChartContainer'
 import DateForm from './DateForm'
+import Playlist from '../components/Playlist'
 
 
 
@@ -45,7 +46,11 @@ class App extends Component {
       <h1>ChartFinder</h1>
       <DateForm submitDateForm={this.submitDateForm} submitBirthdayForm={this.submitBirthdayForm}/>
     {this.state.loading ? <h1>Loading......</h1>  :
-    <ChartContainer chart={this.state.chart} birthday={this.state.birthday}/>}
+    <div>
+    <ChartContainer chart={this.state.chart} birthday={this.state.birthday}/>
+    <Playlist chart={this.state.chart}/>
+    </div>}
+
     </div>)
 }
 }
