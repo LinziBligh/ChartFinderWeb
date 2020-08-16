@@ -5,7 +5,7 @@ import Date from '../components/Date'
 
 const ChartContainer = (props) =>
 (<div class="ChartContainer"><Date chart={props.chart} />
-<Chart chart={props.chart} key={props.chart.id}/>
+<Chart chart={props.chart} key={props.chart.id} birthday={props.birthday}/>
 </div>
 )
 export default ChartContainer

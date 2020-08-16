@@ -11,7 +11,7 @@ class Chart extends Component{
     return(
       <div>
       <div className="Chart">
-          {this.props.chart.songs.map(song=> <SongCard song={song} /> )}
+          {this.props.chart.songs.map(song=> <SongCard song={song} birthday={this.props.birthday} /> )}
       </div>
       </div>
       )

@@ -12,7 +12,7 @@ class App extends Component {
     this.state={
       chart: {},
       loading: true,
-      date: "",
+      date: ""
     }
   }
 
@@ -23,15 +23,15 @@ class App extends Component {
   }
 
   submitDateForm = date =>{
-    this.setState({...this.state, loading: true, date: date});
+    this.setState({...this.state, loading: true, date: date, birthday: false});
     fetch(`http://localhost:3001/api/charts/${date}`)
     .then(response => response.json())
-    .then (chart=> this.setState({chart, loading: false, date: date})
+    .then (chart=> this.setState({chart, loading: false, date: date })
     )
   }
 
   submitBirthdayForm = date =>{
-    this.setState({...this.state, loading: true, date: date});
+    this.setState({...this.state, loading: true, date: date, birthday: true});
     fetch(`http://localhost:3001/api/birthdays/${date}`)
     .then(response => response.json())
     .then (chart=> this.setState({chart, loading: false, date: date})
@@ -45,7 +45,7 @@ class App extends Component {
       <h1>ChartFinder</h1>
       <DateForm submitDateForm={this.submitDateForm} submitBirthdayForm={this.submitBirthdayForm}/>
     {this.state.loading ? <h1>Loading......</h1>  :
-    <ChartContainer chart={this.state.chart} />}
+    <ChartContainer chart={this.state.chart} birthday={this.state.birthday}/>}
     </div>)
 }
 }

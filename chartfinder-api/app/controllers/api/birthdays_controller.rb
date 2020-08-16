@@ -21,7 +21,8 @@ def show
       date_to_url(date)
       song = scrape(@url)
       make_song(song, birthday)
-      birthday.save}
+      birthday.save
+    }
       end
 
       @birthday = Birthday.find_by(date: @date)

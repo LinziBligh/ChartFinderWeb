@@ -5,7 +5,9 @@ const Song = (props) =>
 (
 <div  className ="Song-h2" key={props.song.id}>
 
-<h2>{props.song.position}</h2>
+{props.birthday===true ? "Nth Birthday" : <h2>{props.song.position}</h2>}
+  
+
 <p>{props.song.name} - 
 {props.song.artist}</p> 
 
