@@ -14,7 +14,7 @@ before_action :set_chart, only: [:show, :edit, :destroy]
     else
       date_to_url(@date)
       songs = scrape(@url)
-      chart = Chart.create(date: @date, country: "UK")
+      chart = Chart.create(date: @date, country: "UK", start_date:@date_range[0], end_date:@date_range[1])
       chart.save
       ##for each song in songs, make it a new song object and pushit into chart.
       make_songs(songs, chart)
@@ -51,6 +51,7 @@ before_action :set_chart, only: [:show, :edit, :destroy]
     def set_chart
       @date = params[:id].split("-").reverse.join("-")
       @chart = Chart.find_by(date: @date)
+      ##change to search within a range
       
     end
 
@@ -65,6 +66,7 @@ before_action :set_chart, only: [:show, :edit, :destroy]
       html = open(url)
       doc = Nokogiri::HTML(html)
       songs = doc.css("table.chart-positions div.track")
+      @date_range= doc.at(".article-date").text.strip.split(/\s-\s\s/)
       @song_array = []
 
         position = 1

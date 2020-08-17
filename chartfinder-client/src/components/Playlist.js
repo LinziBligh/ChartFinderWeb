@@ -2,7 +2,9 @@ import React from 'react'
 
 const Playlist = (props) =>(
   <div className="Playlist">
-    I'm a playlist
+    <h1>Share your Playlist</h1>
+    <ol>{props.chart.songs.map(song=> <li>{song.name} by {song.artist}</li>)}
+    </ol>
   </div>)
 
         export default Playlist
