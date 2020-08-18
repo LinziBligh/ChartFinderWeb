@@ -47,7 +47,7 @@ class App extends Component {
       <DateForm submitDateForm={this.submitDateForm} submitBirthdayForm={this.submitBirthdayForm}/>
     {this.state.loading ? <h1>Loading......</h1>  :
     <div>
-    <ChartContainer chart={this.state.chart} birthday={this.state.birthday}/>
+    <ChartContainer chart={this.state.chart} date={this.state.date} birthday={this.state.birthday}/>
     <Playlist chart={this.state.chart}/>
     </div>}
 
