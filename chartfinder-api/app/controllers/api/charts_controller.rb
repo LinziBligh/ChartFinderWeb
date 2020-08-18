@@ -16,7 +16,6 @@ before_action :set_chart, only: [:show, :edit, :destroy]
       songs = scrape(@url)
       chart = Chart.create(date: @date, country: "UK", start_date:@date_range[0], end_date:@date_range[1])
       chart.save
-      ##for each song in songs, make it a new song object and pushit into chart.
       make_songs(songs, chart)
       render json: ChartSerializer.new(chart).to_serialized_json
     end
@@ -49,10 +48,9 @@ before_action :set_chart, only: [:show, :edit, :destroy]
 
     ##helper method to flip date and set chart
     def set_chart
-      @date = params[:id].split("-").reverse.join("-")
-      @chart = Chart.find_by(date: @date)
-      ##change to search within a range
-      
+      @date = params[:id]
+      @chart=Chart.where('DATE(?) BETWEEN start_date AND end_date', @date).first
+      @date = @date.split("-").reverse.join("-")
     end
 
     ##helper method to set date to work with url

@@ -6,7 +6,7 @@ class ChartSerializer
 
   def to_serialized_json
     options = {
-      include:{
+      include:{ 
         songs:{
           only:[:name, :artist, :img_url, :id, :spotify_id, :label, :position]
         }
