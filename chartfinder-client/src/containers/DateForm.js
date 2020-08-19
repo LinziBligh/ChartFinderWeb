@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux'
+import { fetchChart} from "../actions/fetchChart"
 
 class DateForm extends Component {
 
@@ -17,7 +19,7 @@ class DateForm extends Component {
 
   handleChartSubmit = event => {
     event.preventDefault();
-    this.props.submitDateForm(this.state.date)
+    this.props.submitDate(this.state.date)
   }
 
   handleBirthdaySubmit = event => {
@@ -42,4 +44,11 @@ class DateForm extends Component {
 
 }
 
-export default DateForm;
+const mapDispatchToProps = dispatch => {
+  return{
+    submitDate: date => dispatch(fetchChart(date))
+  }
+}
+
+
+export default connect (null,mapDispatchToProps) (DateForm);

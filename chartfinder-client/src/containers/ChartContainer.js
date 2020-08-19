@@ -1,11 +1,27 @@
-import React from 'react'
+
 import Chart from './Chart'
 import Date from '../components/Date'
+import { connect } from 'react-redux'
+import React, { Component } from 'react'
 
+class ChartContainer extends Component {
 
-const ChartContainer = (props) =>
-(<div className="ChartContainer"><Date date={props.date} />
-<Chart chart={props.chart} key={props.chart.id} birthday={props.birthday}/>
+render(){
+  return(  
+  <div className="ChartContainer"><Date date={this.props.date} />
+<Chart />
 </div>
 )
-export default ChartContainer
+}
+
+}
+
+const mapStateToProps = state =>{
+  return ({
+    date: state.charts.date,
+  })
+}
+
+
+
+export default connect(mapStateToProps)(ChartContainer)

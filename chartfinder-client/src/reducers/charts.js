@@ -1,8 +1,18 @@
-export default (state={ chart: {},loading: true, date: ""}, action) => {
+export default (state={ chart: {},requesting: true, date: "", birthday: false}, action) => {
   switch (action.type) {
-    case 'SET_DATE':
-      return {...state, date:action.date};
-      default:
+
+    case 'START_FETCHING_CHART_REQUEST':
+      return{
+        ...state, requesting: true
+      }
+
+
+    case 'ADD_CHART':
+     return {
+        ...state, chart: action.chart, requesting: false, date: action.chart.date }
+        
+      
+        default:
         return state;
   }
 }

@@ -11,27 +11,21 @@ class Chart extends Component{
     return(
       <div>
       <div className="Chart">
-          {this.props.chart.songs.map(song=> <SongCard song={song} birthday={this.props.birthday} /> )}
+      {this.props.songs.map(song=> <SongCard song={song} birthday={this.props.birthday} /> )}
       </div>
       </div>
       )
   }
 }
 
-//constructor(props){
-//  super(props)
-//  this.state={
- //   chart: {},
- //   loading: true,
- //   date: "",
-//  }
-//}
+
 
 const mapStateToProps = (state) => {
-  return ({
-    charts: state.charts
+  console.log(state)
+ return ({
+  songs: state.charts.chart.songs
   })
 }
 
-export default connect(mapStateToProps,) (Chart)
+export default connect(mapStateToProps) (Chart)
 
