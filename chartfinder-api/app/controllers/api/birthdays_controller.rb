@@ -16,18 +16,25 @@ def show
     if @birthday
      render json: ChartSerializer.new(@birthday).to_serialized_json
     else
-      birthday = Birthday.create(date: @date, country: "UK")
+      new_birthday = Birthday.create(date: @date, country: "UK")
       birthday_dates(@date).each{|date|
+
+        date_reversed=date.split("-").reverse.join("-")
+        found_chart=Chart.where('DATE(?) BETWEEN start_date AND end_date', date_reversed).first
+         
+        if found_chart 
+          new_birthday.songs<<found_chart.songs.first
+          new_birthday.save
+         else 
       date_to_url(date)
       song = scrape(@url)
-      make_song(song, birthday)
-      birthday.save
-    }
-      end
-
-      @birthday = Birthday.find_by(date: @date)
+      make_song(song, new_birthday)
+      new_birthday.save
+    
+      end}
+    @birthday = Birthday.find_by(date: @date)
       render json: ChartSerializer.new(@birthday).to_serialized_json
-      
+    end
   end
 
 

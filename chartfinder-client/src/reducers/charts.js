@@ -1,7 +1,7 @@
 export default (state={ chart: {},loading: true, date: ""}, action) => {
   switch (action.type) {
-    case 'GET_CHARTS_SUCCESS':
-      return action.charts;
+    case 'SET_DATE':
+      return {...state, date:action.date};
       default:
         return state;
   }
