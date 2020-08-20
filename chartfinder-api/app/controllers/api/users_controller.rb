@@ -1,17 +1,14 @@
 class Api::UsersController<ApplicationController
 
-    def new
-    end
-  
-    def create
-      @user = User.create(user_params)
-      @user.save
-      session[:user_id] = @user.id
-    end
-  
-    private
-  
-    def user_params
-      params.require(:user).permit(:name, :password, :password_confirmation)
+  def create
+
+    newuser = User.create(username: params[:username], password: params[:password])
+    if newuser.persisted?
+      render json: newuser
+      session[:user_id]= newuser.id
+    else
+      render json:{message: 'the user didnt save!'}
     end
   end
+
+end
