@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import { fetchChart} from "../actions/fetchChart"
+import { fetchBirthdayChart} from "../actions/fetchBirthdayChart"
 
 class DateForm extends Component {
 
@@ -24,8 +25,8 @@ class DateForm extends Component {
 
   handleBirthdaySubmit = event => {
     event.preventDefault();
-    this.props.submitBirthdayForm(this.state.date)
-  } //need to do something different with this to get Birthday playlist
+    this.props.submitBirthday(this.state.date)
+  }
 
   render (){
     return(
@@ -46,7 +47,8 @@ class DateForm extends Component {
 
 const mapDispatchToProps = dispatch => {
   return{
-    submitDate: date => dispatch(fetchChart(date))
+    submitDate: date => dispatch(fetchChart(date)),
+    submitBirthday: date => dispatch(fetchBirthdayChart(date))
   }
 }
 

@@ -3,7 +3,6 @@ import thunk from 'redux-thunk'
 import charts from './reducers/charts'
 
 
-
 const reducers = combineReducers({
   charts
 })

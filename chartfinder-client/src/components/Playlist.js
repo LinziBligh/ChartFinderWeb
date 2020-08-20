@@ -1,10 +1,16 @@
-import React from 'react'
+import React from "react";
 
-const Playlist = (props) =>(
+const Playlist = (props) => (
   <div className="Playlist">
     <h1>Share your Playlist</h1>
-    <ol>{props.chart.songs.map(song=> <li>{song.name} by {song.artist}</li>)}
+    <ol>
+      {props.chart.songs.map((song) => (
+        <li>
+          {song.name} by {song.artist}
+        </li>
+      ))}
     </ol>
-  </div>)
+  </div>
+);
 
-        export default Playlist
+export default Playlist;
