@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Chart.css';
 import ChartContainer from './ChartContainer'
 import DateForm from './DateForm'
-//import Playlist from '../components/Playlist'
+import Playlist from '../components/Playlist'
 import {connect} from 'react-redux'
 import { fetchChart} from "../actions/fetchChart"
 
@@ -32,7 +32,7 @@ class App extends Component {
     {this.props.requesting ? <h1>Requesting......</h1>  :
     <div>
     <ChartContainer />
-   {/*<Playlist chart={this.state.chart}>*/}
+   <Playlist chart={this.props.chart}/>
     </div>}
 
     </div>)
@@ -41,7 +41,8 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return{
-    requesting: state.charts.requesting
+    requesting: state.charts.requesting,
+    chart: state.charts.chart
   }
 }
 
