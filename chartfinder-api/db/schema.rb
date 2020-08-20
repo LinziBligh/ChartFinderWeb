@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 2020_08_20_190817) do
   create_table "birthdays", force: :cascade do |t|
     t.string "date"
     t.string "country"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -24,6 +25,7 @@ ActiveRecord::Schema.define(version: 2020_08_20_190817) do
     t.date "start_date"
     t.date "end_date"
     t.string "country"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -44,6 +46,8 @@ ActiveRecord::Schema.define(version: 2020_08_20_190817) do
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
+    t.integer "chart_id"
+    t.integer "birthday_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
