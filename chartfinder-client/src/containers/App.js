@@ -3,6 +3,7 @@ import "./Chart.css";
 import ChartContainer from "./ChartContainer";
 import DateForm from "./DateForm";
 import Playlist from "../components/Playlist";
+import LoginSignup from "./LoginSignup"
 import { connect } from "react-redux";
 import { fetchChart } from "../actions/fetchChart";
 
@@ -15,6 +16,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>ChartFinder</h1>
+        <LoginSignup />
         <DateForm
         />
         {this.props.requesting ? (
