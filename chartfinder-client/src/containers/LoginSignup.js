@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./Chart.css";
 
-
 class LoginSignup extends Component {
   render() {
     return (
@@ -13,5 +12,4 @@ class LoginSignup extends Component {
   }
 }
 
-
-export default LoginSignup
+export default LoginSignup;

@@ -3,7 +3,7 @@ import "./Chart.css";
 import ChartContainer from "./ChartContainer";
 import DateForm from "./DateForm";
 import Playlist from "../components/Playlist";
-import LoginSignup from "./LoginSignup"
+import LoginSignup from "./LoginSignup";
 import { connect } from "react-redux";
 import { fetchChart } from "../actions/fetchChart";
 
@@ -17,8 +17,7 @@ class App extends Component {
       <div className="App">
         <h1>ChartFinder</h1>
         <LoginSignup />
-        <DateForm
-        />
+        <DateForm />
         {this.props.requesting ? (
           <h1>Requesting......</h1>
         ) : (
@@ -41,7 +40,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    submitDate: (date) => dispatch(fetchChart(date))
+    submitDate: (date) => dispatch(fetchChart(date)),
   };
 };
 
