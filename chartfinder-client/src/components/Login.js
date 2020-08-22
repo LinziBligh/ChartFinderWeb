@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class Signup extends Component {
+class Login extends Component {
   handleSubmit = (event) => {
     alert("ive been clicked");
   };
@@ -8,7 +8,7 @@ class Signup extends Component {
   render() {
     return (
       <div>
-        <h1>Signup here to save your playlists!</h1>
+        <h1>Login here to view your saved playlists!</h1>
         <form onSubmit={(event) => this.handleSubmit(event)}>
           <label>Username</label>
           <input type="text" />
@@ -23,4 +23,4 @@ class Signup extends Component {
   }
 }
 
-export default Signup;
+export default Login;

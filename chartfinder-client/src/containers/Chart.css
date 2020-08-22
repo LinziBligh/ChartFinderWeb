@@ -3,14 +3,13 @@ h2 {
 }
 
 p {
-margin: 5px;
+  margin: 5px;
 }
 
 .Chart {
   padding: 50px;
-  float: left
+  float: left;
 }
-
 
 .SongsContainer {
   padding: 10px;
@@ -31,7 +30,7 @@ margin: 5px;
 .SongCard:hover {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   transform: translate3D(0, -1px, 0) scale(1.05);
-  width:25%;
+  width: 25%;
   border-radius: 20%;
 }
 
@@ -45,5 +44,15 @@ margin: 5px;
 
 .Playlist {
   float: left;
+}
 
+.text-link {
+  color: inherit;
+  text-decoration: inherit;
+  background-color: #EEEEEE;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
 }
