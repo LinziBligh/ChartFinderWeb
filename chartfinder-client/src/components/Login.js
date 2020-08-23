@@ -34,10 +34,10 @@ handlePasswordChange = (event)=>{
         <h1>Login here to view your saved playlists!</h1>
         <form onSubmit={(event) => this.handleSubmit(event)}>
           <label>Username</label>
-          <input type="text" onChange={(event)=>this.handleNameChange(event)} value={this.state.username}/>
+          <input type="text" onChange={this.handleNameChange} value={this.state.username}/>
           <br />
           <label>Password</label>
-          <input type="password"  onChange={(event)=>this.handlePasswordChange(event)} value={this.state.password} />
+          <input type="password"  onChange={this.handlePasswordChange} value={this.state.password} />
           <br />
           <input type="submit" />
         </form>

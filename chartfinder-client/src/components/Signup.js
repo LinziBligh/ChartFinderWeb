@@ -1,31 +1,31 @@
 import React, { Component } from "react";
+import { connect } from "react-redux"
+import { signup } from "../actions/signup";
 
 class Signup extends Component {
-
-  constructor(){
+  constructor() {
     super();
-    this.state={
+    this.state = {
       username: "",
-      password: ""
-    }
+      password: "",
+    };
   }
 
-handleNameChange = (event)=>{
- this.setState({
-   username : event.target.value
- })
-}
+  handleNameChange = (event) => {
+    this.setState({
+      username: event.target.value,
+    });
+  };
 
-handlePasswordChange = (event)=>{
-  this.setState({
-    password : event.target.value
-  })
- }
-
+  handlePasswordChange = (event) => {
+    this.setState({
+      password: event.target.value,
+    });
+  };
 
   handleSubmit = (event) => {
-    event.preventDefault()
-    alert("ive been clicked");
+    event.preventDefault();
+    this.props.signup(this.state)
   };
 
   render() {
@@ -34,10 +34,18 @@ handlePasswordChange = (event)=>{
         <h1>Signup here to save your playlists!</h1>
         <form onSubmit={(event) => this.handleSubmit(event)}>
           <label>Username</label>
-          <input type="text" onChange={(event)=>this.handleNameChange(event)} value={this.state.username}/>
+          <input
+            type="text"
+            onChange={this.handleNameChange}
+            value={this.state.username}
+          />
           <br />
           <label>Password</label>
-          <input type="password"  onChange={(event)=>this.handlePasswordChange(event)} value={this.state.password} />
+          <input
+            type="password"
+            onChange={this.handlePasswordChange}
+            value={this.state.password}
+          />
           <br />
           <input type="submit" />
         </form>
@@ -46,4 +54,5 @@ handlePasswordChange = (event)=>{
   }
 }
 
-export default Signup;
+
+export default connect(null, {signup})(Signup)

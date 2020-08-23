@@ -1,5 +1,5 @@
 export default (
-  state = { chart: {}, requesting: true, date: "", birthday: false },
+  state = { chart: {}, requesting: true, date: "", birthday: false, user: {} },
   action
 ) => {
   switch (action.type) {
@@ -17,7 +17,7 @@ export default (
         date: action.chart.date,
       };
 
-      case "START_FETCHING_BIRTHDAY_REQUEST":
+    case "START_FETCHING_BIRTHDAY_REQUEST":
       return {
         ...state,
         requesting: true,
@@ -29,7 +29,19 @@ export default (
         chart: action.chart,
         requesting: false,
         date: action.chart.date,
-        birthday: true
+        birthday: true,
+      };
+
+    case "START_POSTING_SIGNUP_REQUEST":
+      return {
+        ...state,
+        requesting: true
+      };
+
+      case "ADD_USER":
+      return {
+        ...state, user: action.user,
+        requesting: false
       };
 
     default:
