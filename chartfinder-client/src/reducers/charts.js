@@ -1,5 +1,5 @@
 export default (
-  state = { chart: {}, requesting: true, date: "", birthday: false, user: {} },
+  state = { chart: {}, requesting: true, date: "", birthday: false, loggedIn: false, user: {} },
   action
 ) => {
   switch (action.type) {
@@ -41,7 +41,8 @@ export default (
       case "ADD_USER":
       return {
         ...state, user: action.user,
-        requesting: false
+        requesting: false,
+        loggedIn: true
       };
 
     default:
