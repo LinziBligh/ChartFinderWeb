@@ -16,6 +16,8 @@ class App extends Component {
     return (
       <div className="App">
         <h1>ChartFinder</h1>
+        {this.props.loggedIn && 
+        <h2>Welcome back {this.props.user.username}!</h2>}
         <LoginSignup />
         <DateForm />
         {this.props.requesting ? (
@@ -35,6 +37,8 @@ const mapStateToProps = (state) => {
   return {
     requesting: state.charts.requesting,
     chart: state.charts.chart,
+    loggedIn: state.charts.loggedIn,
+    user: state.charts.user
   };
 };
 
