@@ -6,6 +6,7 @@ import Playlist from "../components/Playlist";
 import LoginSignup from "./LoginSignup";
 import { connect } from "react-redux";
 import { fetchChart } from "../actions/fetchChart";
+import Dashboard from "./Dashboard";
 
 class App extends Component {
   componentDidMount() {
@@ -18,7 +19,8 @@ class App extends Component {
         <h1>ChartFinder</h1>
         {this.props.loggedIn && 
         <h2>Welcome back {this.props.user.username}!</h2>}
-        <LoginSignup />
+
+        {this.props.loggedIn ? <Dashboard />:<LoginSignup />}
         <DateForm />
         {this.props.requesting ? (
           <h1>Requesting......</h1>
