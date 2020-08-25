@@ -10,8 +10,7 @@ export function signup(formData) {
   
     fetch(`http://localhost:3001/api/users`, options)
       .then((response) => response.json())
-      //add user to local state
-      
     .then((user) => dispatch({ type: "ADD_USER", user }));
+    //then redirect to main page
   };
 }
