@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { login } from "../actions/login";
+import { connect } from "react-redux"
 
 class Login extends Component {
 
@@ -23,10 +25,10 @@ handlePasswordChange = (event)=>{
  }
 
 
-  handleSubmit = (event) => {
-    event.preventDefault()
-    alert("ive been clicked");
-  };
+ handleSubmit = (event) => {
+  event.preventDefault();
+  this.props.login(this.state)
+};
 
   render() {
     return (
@@ -46,4 +48,4 @@ handlePasswordChange = (event)=>{
   }
 }
 
-export default Login;
+export default connect(null, {login})(Login)

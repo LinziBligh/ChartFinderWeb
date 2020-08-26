@@ -39,10 +39,17 @@ export default (
       };
 
       case "ADD_USER":
+        console.log(action.user)
       return {
         ...state, user: action.user,
         requesting: false,
         loggedIn: true
+      };
+
+      case "START_POSTING_LOGIN_REQUEST":
+      return {
+        ...state,
+        requesting: true
       };
 
     default:

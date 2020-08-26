@@ -21,7 +21,9 @@ class App extends Component {
         <h2>Welcome back {this.props.user.username}!</h2>}
 
         {this.props.loggedIn ? <Dashboard />:<LoginSignup />}
+        
         <DateForm />
+        
         {this.props.requesting ? (
           <h1>Requesting......</h1>
         ) : (
