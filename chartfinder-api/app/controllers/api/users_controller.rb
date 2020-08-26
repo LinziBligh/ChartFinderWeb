@@ -3,7 +3,7 @@ class Api::UsersController<ApplicationController
   def create
     newuser = User.create(user_params)
     if newuser.persisted?
-      render json: newuser
+      render json: UserSerializer.new(newuser).to_serialized_json
       session[:user_id]= newuser.id
     else
       render json:{message: newuser.errors}, status: 400

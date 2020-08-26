@@ -6,7 +6,7 @@ class Api::SessionsController < ApplicationController
       if user
         user.authenticate(params[:formData][:password])
         session[:user_id] = user.id
-        render json: user
+        render json: UserSerializer.new(user).to_serialized_json
       end
     end
   
