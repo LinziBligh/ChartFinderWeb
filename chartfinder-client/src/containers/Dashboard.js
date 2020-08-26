@@ -7,7 +7,7 @@ class Dashboard extends Component {
     return (
       <div>
         <p>Your Saved Playlists</p>
-       {console.log(this.props.user.charts)}
+       {this.props.user_charts.map(chart=><li>{chart.date}</li>)}
       </div>
     );
   }
@@ -15,7 +15,9 @@ class Dashboard extends Component {
 
 const mapStateToProps = state =>{
   return{
-   user: state.charts.user
+   user: state.charts.user,
+   user_charts: state.charts.user.charts,
+   user_birthdays: state.charts.user.charts
   }
 }
 

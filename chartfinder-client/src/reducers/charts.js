@@ -39,7 +39,6 @@ export default (
       };
 
       case "ADD_USER":
-        console.log(action.user)
       return {
         ...state, user: action.user,
         requesting: false,

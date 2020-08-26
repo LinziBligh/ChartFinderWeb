@@ -18,7 +18,6 @@ class Chart extends Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return {
     songs: state.charts.chart.songs,
   };
