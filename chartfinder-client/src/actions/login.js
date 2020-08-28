@@ -12,7 +12,15 @@ export function login(formData) {
 
     fetch(`http://localhost:3001/api/sessions`, options)
       .then((response) => response.json())
-      .then((user) => dispatch({ type: "ADD_USER", user }))
-      .then(history.push('/'))
+
+    .then((user) => {
+      dispatch({ type: "ADD_USER", user });
+      localStorage.setItem("user", JSON.stringify(user));
+    })
+    
+    .then(history.push('/'))
   };
 }
+
+
+
