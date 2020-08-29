@@ -3,8 +3,9 @@
 function restoredOrDefaultState(){
   //messy, need to hide this default chart away somewhere in another file!
   const savedState = localStorage.getItem("state");
-    if (savedState) 
-      return JSON.parse(savedState);
+  let state= JSON.parse(savedState);
+    if (state) 
+      return state.charts
     else
   return { chart: {
     "id": 1,
@@ -435,7 +436,17 @@ export default (
         requesting: true
       };
 
+      case "RELOAD_STATE": 
+      return {
+        ...state,
+        requesting: true
+      };
+
     default:
       return state;
   }
 };
+
+
+
+
