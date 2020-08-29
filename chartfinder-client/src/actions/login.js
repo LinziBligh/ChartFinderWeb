@@ -1,4 +1,5 @@
 import history from "../history"
+import store from '../store';
 
 export function login(formData) {
   return (dispatch) => {
@@ -15,7 +16,7 @@ export function login(formData) {
 
     .then((user) => {
       dispatch({ type: "ADD_USER", user });
-      localStorage.setItem("user", JSON.stringify(user));
+      localStorage.setItem("state", JSON.stringify(store.getState()));
     })
     
     .then(history.push('/'))

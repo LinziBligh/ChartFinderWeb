@@ -10,23 +10,8 @@ import Dashboard from "./Dashboard";
 
 
 class App extends Component {
-  componentDidMount() {
-    const loggedInUser = localStorage.getItem("user");
-    if (loggedInUser) {
-      console.log(JSON.parse(loggedInUser))}
-    this.props.submitDate("1984-01-08");
-  }
-
-  //useEffect(() => {
-  //  const loggedInUser = localStorage.getItem("user");
-  //  if (loggedInUser) {
-   //   const foundUser = JSON.parse(loggedInUser);
-   //   setUser(foundUser);
-   // }
-  //}, []);
-
+ 
     
-
   render() {
     return (
       <div className="App">
