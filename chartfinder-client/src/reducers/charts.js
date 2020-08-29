@@ -436,11 +436,6 @@ export default (
         requesting: true
       };
 
-      case "RELOAD_STATE": 
-      return {
-        ...state,
-        requesting: true
-      };
 
     default:
       return state;

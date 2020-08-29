@@ -9,15 +9,25 @@ import { fetchChart } from "../actions/fetchChart";
 import Dashboard from "./Dashboard";
 
 
+
 class App extends Component {
  
-    
+  handleOnClick = ()=>{
+    alert("Logging Out")
+    localStorage.clear();
+    window.location.reload();
+  }  
+
+
   render() {
     return (
       <div className="App">
         <h1>ChartFinder</h1>
         {this.props.loggedIn && 
-        <h2>Welcome back {this.props.user.username}!</h2>}
+        <div>
+        <h2>Welcome back {this.props.user.username}!</h2>
+        <button onClick={()=>this.handleOnClick()}>Logout</button>
+        </div>}
 
         {this.props.loggedIn ? <Dashboard />:<LoginSignup />}
         
