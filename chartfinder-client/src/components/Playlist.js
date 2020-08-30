@@ -5,7 +5,7 @@ const Playlist = (props) => (
     <h1>Share your Playlist</h1>
     <ol>
       {props.chart.songs.map((song) => (
-        <li>
+        <li key={song.id}>
           {song.name} by {song.artist}
         </li>
       ))}

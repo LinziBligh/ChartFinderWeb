@@ -9,7 +9,7 @@ class Chart extends Component {
       <div>
         <div className="Chart">
           {this.props.songs.map((song) => (
-            <SongCard song={song} birthday={this.props.birthday} />
+            <SongCard song={song} birthday={this.props.birthday} key={song.id}/>
           ))}
         </div>
       </div>
