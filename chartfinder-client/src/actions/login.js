@@ -1,5 +1,5 @@
-import history from "../history"
-import store from '../store';
+import history from "../history";
+import store from "../store";
 
 export function login(formData) {
   return (dispatch) => {
@@ -13,15 +13,15 @@ export function login(formData) {
 
     fetch(`http://localhost:3001/api/sessions`, options)
       .then((response) => response.json())
+      .then((user) => {
+        dispatch({ type: "ADD_USER", user });
+        localStorage.setItem("state", JSON.stringify(store.getState()));
+      })
 
-    .then((user) => {
-      dispatch({ type: "ADD_USER", user });
-      localStorage.setItem("state", JSON.stringify(store.getState()));
-    })
-    
-    .then(history.push('/'))
-  };
+      .then(history.push("/"))
+      .catch (error=> {alert("Sorry, we couldn't log you in, please sign up or try again");
+      window.location.reload()
+       })
+      
+  }
 }
-
-
-

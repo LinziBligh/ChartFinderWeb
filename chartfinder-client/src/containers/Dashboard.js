@@ -3,16 +3,17 @@ import React, { Component } from "react";
 import { fetchChart } from "../actions/fetchChart";
 import { fetchBirthdayChart } from "../actions/fetchBirthdayChart";
 
+
 class Dashboard extends Component {
   render() {
     return (
       <div>
         <p>Your Saved Playlists</p>
-        {this.props.user_charts ? this.props.user_charts.map((chart) => (<button key={chart.id} onClick={()=>this.props.submitDate(chart.date.split("-").reverse().join("-"))}>
-            {chart.date} - Daily Chart</button>)) : <p>no charts to show</p>}
+        {this.props.user_charts ? this.props.user_charts.map((chart) => (<div><button key={chart.id} onClick={()=>this.props.submitDate(chart.date.split("-").reverse().join("-"))}>
+            {chart.date} - Daily Chart</button> <button>X</button></div>)) : <p>no charts to show</p>}
 
-            {this.props.user_birthdays ? this.props.user_birthdays.map((chart) => (<button key={chart.id} onClick={()=>this.props.submitBirthday(chart.date.split("-").reverse().join("-"))}>
-            {chart.date} - Birthday Chart</button>)) : <p>no birthdays to show</p>}
+            {this.props.user_birthdays ? this.props.user_birthdays.map((chart) => (<div><button key={chart.id} onClick={()=>this.props.submitBirthday(chart.date.split("-").reverse().join("-"))}>
+            {chart.date} - Birthday Chart</button> <button>X</button></div>)) : <p>no birthdays to show</p>}
       </div>
     );
   }
