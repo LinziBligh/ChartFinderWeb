@@ -1,4 +1,5 @@
 import history from "../history"
+import store from '../store';
 
 export function signup(formData) {
   return (dispatch) => {
@@ -12,7 +13,12 @@ export function signup(formData) {
 
     fetch(`http://localhost:3001/api/users`, options)
       .then((response) => response.json())
-      .then((user) => dispatch({ type: "ADD_USER", user }))
-      .then(history.push('/'))
-  };
+      .then((user) => {
+        dispatch({ type: "ADD_USER", user });
+        localStorage.setItem("state", JSON.stringify(store.getState()))
+      })
+
+      .then(history.push('/'))}
 }
+
+

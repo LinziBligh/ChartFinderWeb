@@ -7,6 +7,7 @@ import LoginSignup from "./LoginSignup";
 import { connect } from "react-redux";
 import { fetchChart } from "../actions/fetchChart";
 import Dashboard from "./Dashboard";
+import SaveChart from "../components/SaveChart"
 
 
 
@@ -38,6 +39,9 @@ class App extends Component {
         ) : (
           <div>
             <ChartContainer />
+
+            {this.props.loggedIn && 
+            <SaveChart />}
             <Playlist chart={this.props.chart} />
           </div>
         )}
