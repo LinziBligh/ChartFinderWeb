@@ -3,8 +3,7 @@ class Api::SessionsController < ApplicationController
   
     def create
       user = User.find_by_username(params[:formData][:username])
-      if user
-        user.authenticate(params[:formData][:password])
+      if user && user.authenticate(params[:formData][:password])
         session[:user_id] = user.id
         render json: UserSerializer.new(user).to_serialized_json
       end
