@@ -18,6 +18,10 @@ class Api::UsersController<ApplicationController
     render json: UserSerializer.new(user).to_serialized_json
   end
 
+  def destroy
+    puts "destroying in process"
+  end
+
   private
 
   def user_params
