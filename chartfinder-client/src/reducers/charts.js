@@ -436,6 +436,13 @@ export default (
         requesting: true
       };
 
+      case "SAVE_CHART_TO_USER":
+        console.log(action.user)
+        return {
+          ...state,
+          user: action.user
+        };
+
 
     default:
       return state;
