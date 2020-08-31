@@ -440,7 +440,10 @@ export default (
         console.log(action.user)
         return {
           ...state,
-          user: action.user
+          user: {
+            ...state.user,
+            charts: action.user.charts
+          }
         };
 
 
