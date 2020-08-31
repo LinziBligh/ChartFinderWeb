@@ -20,6 +20,7 @@ handleClick = () => {
   fetch(`http://localhost:3001/api/users/${this.props.user_id}`, options)
   .then(response=> response.json())
   .then(user=> this.props.addChart(user))
+  .then (localStorage.setItem("state", JSON.stringify(this.props.state)))
   
 }
 }
@@ -31,7 +32,8 @@ handleClick = () => {
 const mapStateToProps = state =>{
   return{
     user_id: state.charts.user.id,
-    chart_id: state.charts.chart.id
+    chart_id: state.charts.chart.id,
+    state: state
   }
 }
 
