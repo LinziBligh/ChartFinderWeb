@@ -437,6 +437,17 @@ export default (
       };
 
       case "SAVE_CHART_TO_USER":
+        return {
+          ...state,
+          user: {
+            ...state.user,
+            charts: action.user.charts
+          }
+        };
+
+        //these are identical, merge together??
+
+        case "REMOVE_CHART_FROM_USER":
         console.log(action.user)
         return {
           ...state,

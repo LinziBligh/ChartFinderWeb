@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
+import { connect } from "react-redux"
+import store from '../store';
 
 class DeleteChart extends Component {
   render() {
@@ -19,23 +20,27 @@ class DeleteChart extends Component {
     fetch(`http://localhost:3001/api/users/${this.props.user_id}`, options)
       .then((response) => response.json())
       .then((user) => {
-        this.props.addChart(user);
-        localStorage.clear()
-        localStorage.setItem("state", JSON.stringify(this.props.state));
+        this.props.removeChart(user);
+       updateLocalStorage();
       });
-  };
+  }}
+
+  function updateLocalStorage () {
+  localStorage.clear();
+  localStorage.setItem("state", JSON.stringify(store.getState()))
 }
+
+
 
 const mapStateToProps = (state) => {
   return {
     user_id: state.charts.user.id,
-    state: state,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addChart: (user) => dispatch({ type: "SAVE_CHART_TO_USER", user: user }),
+    removeChart: (user) => dispatch({ type: "REMOVE_CHART_FROM_USER", user: user }),
   };
 };
 

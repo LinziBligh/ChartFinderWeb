@@ -15,7 +15,7 @@ class Api::UsersController<ApplicationController
     chart = Chart.find_by_id(params[:formData][:chartId])
     user.charts<<chart
     user.save
-    
+    render json: UserSerializer.new(user).to_serialized_json
   end
 
   def destroy
