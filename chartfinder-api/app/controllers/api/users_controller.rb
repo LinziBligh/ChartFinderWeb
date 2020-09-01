@@ -15,11 +15,15 @@ class Api::UsersController<ApplicationController
     chart = Chart.find_by_id(params[:formData][:chartId])
     user.charts<<chart
     user.save
-    render json: UserSerializer.new(user).to_serialized_json
+    
   end
 
   def destroy
-    puts "destroying in process"
+    user = User.find_by_id(params[:formData][:userId])
+    chart = Chart.find_by_id(params[:formData][:chartId])
+    user.charts.delete(chart)
+    user.save
+    render json: UserSerializer.new(user).to_serialized_json
   end
 
   private

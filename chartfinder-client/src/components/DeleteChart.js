@@ -9,7 +9,7 @@ class DeleteChart extends Component {
   //need to change whole component to be delete instead of add
   handleClick = () => {
     const options = {
-      method: "PATCH",
+      method: "DELETE",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         formData: { userId: this.props.user_id, chartId: this.props.chart_id },
@@ -29,7 +29,6 @@ class DeleteChart extends Component {
 const mapStateToProps = (state) => {
   return {
     user_id: state.charts.user.id,
-    chart_id: state.charts.chart.id,
     state: state,
   };
 };
