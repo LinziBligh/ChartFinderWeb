@@ -399,6 +399,7 @@ export default (
         ...state,
         chart: action.chart,
         requesting: false,
+        birthday: false,
         date: action.chart.date,
       };
 
@@ -437,12 +438,10 @@ export default (
       };
 
       case "SAVE_CHART_TO_USER":
+        console.log(action.user)
         return {
           ...state,
-          user: {
-            ...state.user,
-            charts: action.user.charts
-          }
+          user: action.user
         };
 
         //these are identical, merge together??

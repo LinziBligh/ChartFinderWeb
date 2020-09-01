@@ -14,7 +14,6 @@ before_action :set_chart, only: [:show, :edit, :destroy]
     else
       date_to_url(@date)
       songs = scrape(@url)
-      #possibly dont need to save @date to chart as its now a range
       chart = Chart.create(date: @date, country: "UK", start_date:@date_range[0], end_date:@date_range[1])
       chart.save
       make_songs(songs, chart)
