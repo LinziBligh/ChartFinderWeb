@@ -12,9 +12,15 @@ class Api::UsersController<ApplicationController
 
   def update
     user = User.find_by_id(params[:formData][:userId])
+    if params[:formData][:birthday]
+    birthday = Birthday.find_by_id(params[:formData][:chartId])
+    user.birthdays<<birthday
+    user.save
+    else
     chart = Chart.find_by_id(params[:formData][:chartId])
     user.charts<<chart
     user.save
+    end
     render json: UserSerializer.new(user).to_serialized_json
   end
 

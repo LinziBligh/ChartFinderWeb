@@ -11,7 +11,7 @@ class SaveChart extends Component {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        formData: { userId: this.props.user_id, chartId: this.props.chart_id },
+        formData: { userId: this.props.user_id, chartId: this.props.chart_id, birthday: this.props.birthday },
       }),
     };
 
@@ -29,6 +29,7 @@ const mapStateToProps = (state) => {
   return {
     user_id: state.charts.user.id,
     chart_id: state.charts.chart.id,
+    birthday: state.charts.birthday,
     state: state,
   };
 };
