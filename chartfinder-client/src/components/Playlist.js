@@ -1,5 +1,5 @@
 import React from "react";
-import Export from "./Export"
+import Popup from "./Popup"
 
 const Playlist = (props) => (
   <div className="Playlist">
@@ -11,7 +11,7 @@ const Playlist = (props) => (
         </li>
       ))}
     </ol>
-    <Export />
+    <Popup />
   </div>
 );
 
