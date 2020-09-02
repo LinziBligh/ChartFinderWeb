@@ -7,13 +7,12 @@ class DeleteChart extends Component {
     return <button onClick={() => this.handleClick()}>X</button>;
   }
 
-  //need to change whole component to be delete instead of add
   handleClick = () => {
     const options = {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        formData: { userId: this.props.user_id, chartId: this.props.chart_id },
+        formData: { userId: this.props.user_id, chartId: this.props.chart_id, birthday: this.props.birthday },
       }),
     };
 

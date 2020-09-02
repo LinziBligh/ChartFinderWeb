@@ -438,7 +438,6 @@ export default (
       };
 
       case "SAVE_CHART_TO_USER":
-        console.log(action.user)
         return {
           ...state,
           user: action.user
@@ -450,10 +449,7 @@ export default (
         console.log(action.user)
         return {
           ...state,
-          user: {
-            ...state.user,
-            charts: action.user.charts
-          }
+          user: action.user
         };
 
 
