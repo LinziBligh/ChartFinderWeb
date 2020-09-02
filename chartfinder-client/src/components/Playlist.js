@@ -1,5 +1,5 @@
 import React from "react";
-import Popup from "./Popup"
+import Modal from "./Modal"
 
 const Playlist = (props) => (
   <div className="Playlist">
@@ -11,7 +11,7 @@ const Playlist = (props) => (
         </li>
       ))}
     </ol>
-    <Popup />
+    <Modal chart={props.chart} />
   </div>
 );
 
