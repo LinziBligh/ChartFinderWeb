@@ -1,4 +1,5 @@
 import React from "react";
+import Export from "./Export"
 
 const Playlist = (props) => (
   <div className="Playlist">
@@ -10,6 +11,7 @@ const Playlist = (props) => (
         </li>
       ))}
     </ol>
+    <Export />
   </div>
 );
 

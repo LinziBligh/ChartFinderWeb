@@ -11,6 +11,7 @@ import SaveChart from "../components/SaveChart"
 
 
 
+
 class App extends Component {
  
   handleOnClick = ()=>{
@@ -44,6 +45,7 @@ class App extends Component {
             <SaveChart />}
             <Playlist chart={this.props.chart} />
           </div>
+
         )}
       </div>
     );
