@@ -3,8 +3,12 @@ body {
   font-family: 'Audiowide', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url("./images/80s-grid-wallpaper-blue.png");
   text-align: center;
+  background: url("./images/blue-infinity-grid.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   
 }
 
