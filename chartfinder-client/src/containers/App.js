@@ -36,7 +36,7 @@ class App extends Component {
         <DateForm />
         
         {this.props.requesting ? (
-          <h1>Requesting......</h1>
+          <h2>Generating......</h2>
         ) : (
           <div>
             <ChartContainer />
