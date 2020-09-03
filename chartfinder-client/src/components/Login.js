@@ -41,7 +41,7 @@ handlePasswordChange = (event)=>{
           <label>Password</label>
           <input type="password"  onChange={this.handlePasswordChange} value={this.state.password} />
           <br />
-          <input type="submit" />
+          <button type="submit">Login</button>
         </form>
       </div>
     );

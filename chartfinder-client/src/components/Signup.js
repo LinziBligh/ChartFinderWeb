@@ -47,7 +47,7 @@ class Signup extends Component {
             value={this.state.password}
           />
           <br />
-          <input type="submit" />
+          <button type="submit">Submit</button>
         </form>
       </div>
     );
