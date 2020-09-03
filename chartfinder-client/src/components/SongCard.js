@@ -26,7 +26,7 @@ class SongCard extends Component {
     return(
       <div className="SongCard" onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
        
-    <Song song={this.props.song} key={this.props.song.id} birthday={this.props.birthday}/>
+    <Song song={this.props.song} key={this.props.song.id} year={this.props.year} birthday={this.props.birthday}/>
     {this.state.hover === true &&
     <Spotify song={this.props.song}/>
   }
