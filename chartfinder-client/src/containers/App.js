@@ -39,6 +39,7 @@ class App extends Component {
           <h2>Generating......</h2>
         ) : (
           <div>
+            <hr/>
             <ChartContainer />
 
             {this.props.loggedIn && 

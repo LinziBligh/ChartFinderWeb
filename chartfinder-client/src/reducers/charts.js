@@ -9,7 +9,7 @@ function restoredOrDefaultState(){
     else
   return { chart: {
     "id": 1,
-    "date": "08-01-1984",
+    "date": "1984-01-08",
     "start_date": "1984-01-08",
     "end_date": "1984-01-14",
     "country": "UK",
@@ -378,7 +378,7 @@ function restoredOrDefaultState(){
         "position": 40
       }
     ]
-  }, requesting: false, date: "1984-1-8", birthday: false, loggedIn: false, user: {} }
+  }, requesting: false, date: "8-1-1984", birthday: false, loggedIn: false, user: {} }
 
 }
 

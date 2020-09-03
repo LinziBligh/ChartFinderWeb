@@ -31,6 +31,15 @@ ul {
   list-style-type: none
 }
 
+hr{
+  width: 30%;
+  height: 3px;
+  border-radius: 30px;
+  background: white;
+  box-shadow: 0 5px 30px white;
+  border-color: lightblue;
+}
+
 button{
   background: -webkit-linear-gradient(purple, white, hotpink);
     border: 2px solid white;
@@ -48,7 +57,7 @@ button{
 }
 
 button:hover{
-  box-shadow: 0 6px 40px lightblue;
+  box-shadow: 0 6px 40px rgb(252, 2, 127);
 
 }
 
@@ -94,19 +103,27 @@ button:hover{
   color: white;
 }
 
-.Playlist {
-  float: left;
-}
+
 
 .text-link {
-  color: inherit;
-  text-decoration: inherit;
-  background-color: #EEEEEE;
-  padding: 2px 6px 2px 6px;
-  border-top: 1px solid #CCCCCC;
-  border-right: 1px solid #333333;
-  border-bottom: 1px solid #333333;
-  border-left: 1px solid #CCCCCC;
+  background: -webkit-linear-gradient(darkblue, white, lightblue);
+  border: 2px solid white;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-align: center;
+  text-decoration: none;
+  font-style: italic;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  font-family: 'Audiowide', sans-serif;
+  box-shadow: 0 6px 40px lightblue
+
+}
+
+.text-link:hover {
+  box-shadow: 0 6px 40px darkblue
 }
 
 .popup-content{
