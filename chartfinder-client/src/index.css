@@ -3,7 +3,7 @@ body {
   font-family: 'Audiowide', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #1e2c57;
+  background-image: url("./images/80s-grid-wallpaper-blue.png");
   text-align: center;
   
 }
