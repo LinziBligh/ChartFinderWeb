@@ -31,7 +31,7 @@ class Signup extends Component {
   render() {
     return (
       <div>
-        <h1>Signup here to save your playlists!</h1>
+        <h2>Signup here to save your playlists!</h2>
         <form onSubmit={(event) => this.handleSubmit(event)}>
           <label>Username</label>
           <input

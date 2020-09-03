@@ -33,7 +33,7 @@ handlePasswordChange = (event)=>{
   render() {
     return (
       <div>
-        <h1>Login here to view your saved playlists!</h1>
+        <h2>Login here to view your saved playlists!</h2>
         <form onSubmit={(event) => this.handleSubmit(event)}>
           <label>Username</label>
           <input type="text" onChange={this.handleNameChange} value={this.state.username}/>
