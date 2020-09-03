@@ -44,7 +44,6 @@ button{
 }
 
 button:hover{
-  box-shadow: 0 6px 40px hotpink;
   box-shadow: 0 6px 40px lightblue;
 
 }
@@ -66,19 +65,21 @@ button:hover{
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   width: 10%;
-  background: #414040;
+  background: -webkit-linear-gradient(darkblue, purple, hotpink, white);
+  box-shadow: 0 6px 10px lightblue;
   float: left;
   padding: 10px;
   margin: 5px;
-  font-size: small;
-  border-radius: 50%;
+  font-size: x-small;
+  border-radius: 10%;
 }
 
 .SongCard:hover {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   transform: translate3D(0, -1px, 0) scale(1.05);
+  font-size: small;
   width: 25%;
-  border-radius: 20%;
+  border-radius: 10%;
 }
 
 .SongImage {
