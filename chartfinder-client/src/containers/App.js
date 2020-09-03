@@ -28,7 +28,7 @@ class App extends Component {
         {this.props.loggedIn && 
         <div>
         <h2>Welcome back {this.props.user.username}!</h2>
-        <button onClick={()=>this.handleOnClick()}>Logout</button>
+        <button className="loginsignup" onClick={()=>this.handleOnClick()}>Logout</button>
         </div>}
 
         {this.props.loggedIn ? <Dashboard />:<LoginSignup />}
