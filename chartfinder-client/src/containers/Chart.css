@@ -27,6 +27,28 @@ ul {
   list-style-type: none
 }
 
+button{
+  background: -webkit-linear-gradient(purple, white, hotpink);
+    border: 2px solid white;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-align: center;
+    text-decoration: none;
+    font-style: italic;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    font-family: 'Audiowide', sans-serif;
+    box-shadow: 0 6px 40px hotpink
+}
+
+button:hover{
+  box-shadow: 0 6px 40px hotpink;
+  box-shadow: 0 6px 40px lightblue;
+
+}
+
 .loginsignup {
   position:absolute; top:0; right:0
 }
