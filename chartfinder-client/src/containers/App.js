@@ -24,7 +24,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>ChartFinder</h1>
+        <h1>CHARTFINDER</h1>
         {this.props.loggedIn && 
         <div>
         <h2>Welcome back {this.props.user.username}!</h2>

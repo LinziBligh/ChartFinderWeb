@@ -1,9 +1,24 @@
+h1 {
+  background: -webkit-linear-gradient(blue, purple, white, hotpink);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px white;
+}
+
 h2 {
   margin: 5px;
+  background: -webkit-linear-gradient(blue, purple, white, hotpink);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 0.5px white;
 }
 
 p {
   margin: 5px;
+}
+
+ul {
+  list-style-type: none
 }
 
 .Chart {
@@ -56,5 +71,7 @@ p {
   border-bottom: 1px solid #333333;
   border-left: 1px solid #CCCCCC;
 }
+
+
 
 
