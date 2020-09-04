@@ -7,7 +7,6 @@ h1 {
   font-size: 5em;
   margin-block-start: 0.1em;
   margin-bottom: 6px;
-  
 }
 
 h2 {
@@ -25,14 +24,13 @@ h3 {
 
 p {
   margin: 5px;
-  
 }
 
 ul {
-  list-style-type: none
+  list-style-type: none;
 }
 
-hr{
+hr {
   width: 30%;
   height: 3px;
   border-radius: 30px;
@@ -41,36 +39,37 @@ hr{
   border-color: lightblue;
 }
 
-button{
+button {
   background: -webkit-linear-gradient(purple, white, hotpink);
-    border: 2px solid white;
-    color: black;
-    padding: 10px 20px;
-    border-radius: 20px;
-    text-align: center;
-    text-decoration: none;
-    font-style: italic;
-    display: inline-block;
-    font-size: 12px;
-    margin: 4px 2px;
-    font-family: 'Audiowide', sans-serif;
-    box-shadow: 0 6px 40px hotpink
+  border: 2px solid white;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-align: center;
+  text-decoration: none;
+  font-style: italic;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  font-family: "Audiowide", sans-serif;
+  box-shadow: 0 6px 40px hotpink;
 }
 
-button:hover{
+button:hover {
   box-shadow: 0 6px 40px rgb(252, 2, 127);
-
 }
 
 .loginsignup {
-  position:absolute; top:0; right:0
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .Chart {
   display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  padding: 50px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 125px;
   float: left;
 }
 
@@ -79,7 +78,6 @@ button:hover{
 }
 
 .SongCard {
-    
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   width: 10%;
@@ -91,16 +89,18 @@ button:hover{
   margin: 5px;
   font-size: x-small;
   border-radius: 10%;
-  position: relative;
+  
+ 
 }
 
 .SongCard:hover {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-  transform: translate3D(0, -1px, 0) scale(1.05);
+  transform: perspective(200px) translate3D(0, 0, 30px);
   font-size: small;
   width: 15%;
   height: 245px;
   border-radius: 10%;
+  
 }
 
 .SongImage {
@@ -110,8 +110,6 @@ button:hover{
 .Song-h2 {
   color: white;
 }
-
-
 
 .text-link {
   background: -webkit-linear-gradient(darkblue, white, lightblue);
@@ -125,30 +123,32 @@ button:hover{
   display: inline-block;
   font-size: 12px;
   margin: 4px 2px;
-  font-family: 'Audiowide', sans-serif;
-  box-shadow: 0 6px 40px lightblue
-
+  font-family: "Audiowide", sans-serif;
+  box-shadow: 0 6px 40px lightblue;
 }
 
 .text-link:hover {
-  box-shadow: 0 6px 40px darkblue
+  box-shadow: 0 6px 40px darkblue;
 }
 
 iframe {
-  -moz-transform: scale(0.6, 0.6); 
-  -webkit-transform: scale(0.6, 0.6); 
+  -moz-transform: scale(0.6, 0.6);
+  -webkit-transform: scale(0.6, 0.6);
   -o-transform: scale(0.6, 0.6);
   -ms-transform: scale(0.6, 0.6);
-  transform: scale(0.6, 0.6); 
+  transform: scale(0.6, 0.6);
   position: absolute;
   left: -39px;
-  bottom: -0.5px
+  bottom: -0.5px;
 }
 
-.popup-content{
-  background: -webkit-linear-gradient(0.5turn, purple,  hotpink, white, hotpink, purple)
+.popup-content {
+  background: -webkit-linear-gradient(
+    0.5turn,
+    purple,
+    hotpink,
+    white,
+    hotpink,
+    purple
+  );
 }
-
-
-
-
