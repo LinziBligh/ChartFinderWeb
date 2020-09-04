@@ -4,7 +4,7 @@ import store from '../store';
 
 class DeleteChart extends Component {
   render() {
-    return <button onClick={() => this.handleClick()}>X</button>;
+    return <button className="text-link" onClick={() => this.handleClick()}>DELETE</button>;
   }
 
   handleClick = () => {

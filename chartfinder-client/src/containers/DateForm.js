@@ -32,6 +32,7 @@ class DateForm extends Component {
     return(
       
       <div style={{marginTop: "20px"}}>
+        <hr/>
         Pick A Date
         <br />
         <br />
