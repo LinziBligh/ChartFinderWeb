@@ -135,13 +135,14 @@ button:hover{
 }
 
 iframe {
-  -moz-transform: scale(0.5, 0.5); 
-  -webkit-transform: scale(0.5, 0.5); 
-  -o-transform: scale(0.5, 0.5);
-  -ms-transform: scale(0.5, 0.5);
-  transform: scale(0.5, 0.5); 
+  -moz-transform: scale(0.6, 0.6); 
+  -webkit-transform: scale(0.6, 0.6); 
+  -o-transform: scale(0.6, 0.6);
+  -ms-transform: scale(0.6, 0.6);
+  transform: scale(0.6, 0.6); 
   position: absolute;
   left: -39px;
+  bottom: -0.5px
 }
 
 .popup-content{
