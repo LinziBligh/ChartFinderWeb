@@ -24,6 +24,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <h4>Introducing</h4>
         <h1>CHARTFINDER</h1>
         {this.props.loggedIn && 
         <div>

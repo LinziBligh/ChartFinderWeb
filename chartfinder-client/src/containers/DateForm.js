@@ -36,7 +36,7 @@ class DateForm extends Component {
         <br />
         <br />
         <form >
-          <input type="date" onChange={event=>this.handleOnChange(event)} value={this.state.date}/>
+          <input type="date" min="1952-11-14" onChange={event=>this.handleOnChange(event)} value={this.state.date}/>
         <button type="submit" onClick={this.handleChartSubmit}>Find Chart</button>
         <button type="submit" onClick={this.handleBirthdaySubmit}>Generate Birthday Playlist</button>
         </form>
