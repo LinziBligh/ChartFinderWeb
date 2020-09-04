@@ -79,6 +79,7 @@ button:hover{
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   width: 10%;
+  height: 150px;
   background: -webkit-linear-gradient(darkblue, purple, hotpink, white);
   box-shadow: 0 6px 10px lightblue;
   float: left;
@@ -93,7 +94,8 @@ button:hover{
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   transform: translate3D(0, -1px, 0) scale(1.05);
   font-size: small;
-  width: 25%;
+  width: 15%;
+  height: 245px;
   border-radius: 10%;
 }
 
@@ -126,6 +128,16 @@ button:hover{
 
 .text-link:hover {
   box-shadow: 0 6px 40px darkblue
+}
+
+iframe {
+  -moz-transform: scale(0.5, 0.5); 
+  -webkit-transform: scale(0.5, 0.5); 
+  -o-transform: scale(0.5, 0.5);
+  -ms-transform: scale(0.5, 0.5);
+  transform: scale(0.5, 0.5); 
+  position: absolute;
+  left: -39px;
 }
 
 .popup-content{
