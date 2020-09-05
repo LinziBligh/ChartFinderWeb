@@ -26,6 +26,8 @@ class App extends Component {
       <div className="App">
         <h4>Introducing...</h4>
         <h1>CHARTFINDER</h1>
+        <h3>Find the soundtrack to your life</h3>
+        
         {this.props.loggedIn && 
         <div>
         <h2>Welcome back {this.props.user.username}!</h2>

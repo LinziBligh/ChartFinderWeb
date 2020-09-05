@@ -19,7 +19,12 @@ h2 {
 }
 
 h3 {
+  background: -webkit-linear-gradient(blue, purple, white, hotpink);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 0.25px white;
+  font-style: italic;
+  margin: 5px
 }
 
 p {
@@ -27,6 +32,10 @@ p {
 }
 
 ul {
+  list-style-type: none;
+}
+
+ol {
   list-style-type: none;
 }
 

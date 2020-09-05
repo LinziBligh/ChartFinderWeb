@@ -32,15 +32,17 @@ class DateForm extends Component {
     return(
       
       <div style={{marginTop: "20px"}}>
+        <br/>
         <hr/>
-        Pick A Date
-        <br />
-        <br />
+        <br/>
+        <p>Search the Official UK Chart archives for a historical chart, <br/>or choose "Birthday Playlist" to see your birthday number 1 across the years</p>
+        
         <form >
-          <input type="date" min="1952-11-14" onChange={event=>this.handleOnChange(event)} value={this.state.date}/>
+        Pick A Date  <input type="date" min="1952-11-14" onChange={event=>this.handleOnChange(event)} value={this.state.date}/>
         <button type="submit" onClick={this.handleChartSubmit}>Find Chart</button>
         <button type="submit" onClick={this.handleBirthdaySubmit}>Generate Birthday Playlist</button>
         </form>
+        <br/>
        </div>)
   }
 
