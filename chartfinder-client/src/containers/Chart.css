@@ -4,9 +4,9 @@ h1 {
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 0.5px white;
   font-style: italic;
-  font-size: 5em;
+  font-size: 7vw;
   margin-block-start: 0.1em;
-  margin-bottom: 6px;
+  margin-bottom: 5px;
 }
 
 h2 {
@@ -15,7 +15,7 @@ h2 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 0.5px white;
-  font-size: 2em;
+  font-size: 2vw;
 }
 
 h3 {
@@ -25,6 +25,10 @@ h3 {
   -webkit-text-stroke: 0.25px white;
   font-style: italic;
   margin: 5px
+}
+
+h4 {
+  margin:10px
 }
 
 p {
@@ -154,8 +158,6 @@ iframe {
   background: -webkit-linear-gradient(
     0.5turn,
     purple,
-    hotpink,
-    white,
     hotpink,
     purple
   );
