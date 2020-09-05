@@ -66,11 +66,12 @@ button:hover {
 }
 
 .Chart {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  padding: 125px;
-  float: left;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+  margin: 20px;
 }
 
 .SongsContainer {
@@ -80,8 +81,7 @@ button:hover {
 .SongCard {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  width: 10%;
-  height: 150px;
+  height: 190px;
   background: -webkit-linear-gradient(darkblue, purple, hotpink, white);
   box-shadow: 0 6px 10px lightblue;
   float: left;
@@ -89,18 +89,15 @@ button:hover {
   margin: 5px;
   font-size: x-small;
   border-radius: 10%;
-  
- 
 }
 
 .SongCard:hover {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-  transform: perspective(200px) translate3D(0, 0, 30px);
-  font-size: small;
-  width: 15%;
-  height: 245px;
+  transform: perspective(100px) translate3D(0, 0, 40px);
+  font-size: xx-small;
   border-radius: 10%;
-  
+  z-index: 9999;
+  position: relative
 }
 
 .SongImage {
@@ -132,13 +129,13 @@ button:hover {
 }
 
 iframe {
-  -moz-transform: scale(0.6, 0.6);
-  -webkit-transform: scale(0.6, 0.6);
-  -o-transform: scale(0.6, 0.6);
-  -ms-transform: scale(0.6, 0.6);
-  transform: scale(0.6, 0.6);
+  -moz-transform: scale(0.4, 0.4);
+  -webkit-transform: scale(0.4, 0.4);
+  -o-transform: scale(0.4, 0.4);
+  -ms-transform: scale(0.4, 0.4);
+  transform: scale(0.4, 0.4);
   position: absolute;
-  left: -39px;
+  left: -68px;
   bottom: -0.5px;
 }
 
