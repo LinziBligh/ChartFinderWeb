@@ -67,11 +67,11 @@ button:hover {
 
 .Chart {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(170px, 170px));
   grid-template-rows: repeat(5, 1fr);
   grid-column-gap: 5px;
   grid-row-gap: 5px;
-  margin: 20px;
+  margin: 5%;
 }
 
 .SongsContainer {
@@ -138,6 +138,7 @@ iframe {
   position: absolute;
   left: -68px;
   bottom: -0.5px;
+
 }
 
 .popup-content {
