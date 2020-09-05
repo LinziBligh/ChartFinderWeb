@@ -160,3 +160,10 @@ iframe {
     purple
   );
 }
+
+
+.ReactLoading {
+  position: absolute;
+  left: 50vw;
+  transform: translate(-50%)
+}

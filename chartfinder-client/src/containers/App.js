@@ -8,6 +8,7 @@ import { connect } from "react-redux";
 import { fetchChart } from "../actions/fetchChart";
 import Dashboard from "./Dashboard";
 import SaveChart from "../components/SaveChart"
+import ReactLoading from 'react-loading'
 
 
 
@@ -39,7 +40,12 @@ class App extends Component {
         <DateForm />
         
         {this.props.requesting ? (
+          <div >
           <h2>Generating......</h2>
+          <div className={"ReactLoading"}>
+          <ReactLoading  type={"bars"} color={"white"} />
+          </div>
+          </div>
         ) : (
           <div>
             <hr/>
