@@ -13,7 +13,7 @@ before_action :set_chart, only: [:show, :edit, :destroy]
      render json: ChartSerializer.new(@chart).to_serialized_json
     else
       date_to_url(@date)
-      songs = scrape(@url)
+      songs = scrape(@url, @date)
       chart = Chart.create(date: @date, country: "UK", start_date:@date_range[0], end_date:@date_range[1])
       chart.save
       make_songs(songs, chart)
@@ -60,11 +60,12 @@ before_action :set_chart, only: [:show, :edit, :destroy]
     end
 
 
-    def scrape(url)
+    def scrape(url,date)
       html = open(url)
       doc = Nokogiri::HTML(html)
       songs = doc.css("table.chart-positions div.track")
       @date_range= doc.at(".article-date").text.strip.split(/\s-\s\s/)
+      year = date.split("-")[2]
       @song_array = []
 
         position = 1
@@ -75,6 +76,7 @@ before_action :set_chart, only: [:show, :edit, :destroy]
         new_hash[:label] = song.css(".label").text.split.map(&:capitalize).join(' ')
         new_hash[:img_url] = song.css(".cover img").attribute("src").value
         new_hash[:position] = position
+        new_hash[:year] = year
         position=position+1
         
         track = find_spotify_details(new_hash[:name])

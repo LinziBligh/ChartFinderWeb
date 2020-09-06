@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2020_08_20_190817) do
     t.string "spotify_id"
     t.string "label"
     t.integer "position"
+    t.integer "year"
     t.integer "chart_id"
     t.integer "birthday_id"
     t.datetime "created_at", precision: 6, null: false

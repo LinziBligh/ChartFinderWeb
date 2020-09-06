@@ -17,21 +17,18 @@ def show
      render json: ChartSerializer.new(@birthday).to_serialized_json
     else
       new_birthday = Birthday.create(date: @date, country: "UK")
-      birthday_dates(@date).each{|date|
 
+      birthday_dates(@date).each{|date|
         date_reversed=date.split("-").reverse.join("-")
         found_chart=Chart.where('DATE(?) BETWEEN start_date AND end_date', date_reversed).first
-         
         if found_chart 
           new_birthday.songs<<found_chart.songs.first
-          new_birthday.save
          else 
       date_to_url(date)
-      song = scrape(@url)
-      make_song(song, new_birthday)
-      new_birthday.save
-    
+      song = Song.create(scrape(@url, date))
+      new_birthday.songs<<song
       end}
+      new_birthday.save
     @birthday = Birthday.find_by(date: @date)
       render json: ChartSerializer.new(@birthday).to_serialized_json
     end
@@ -90,10 +87,12 @@ def show
     end
 
 
-    def scrape(url)
+    def scrape(url, date)
       html = open(url)
       doc = Nokogiri::HTML(html)
       song = doc.css("table.chart-positions div.track")[0]
+      year = date.split("-")[2]
+
       
 
         number_one = {}
@@ -102,6 +101,8 @@ def show
         number_one[:label] = song.css(".label").text.split.map(&:capitalize).join(' ')
         number_one[:img_url] = song.css(".cover img").attribute("src").value
         number_one[:position] = 1
+        number_one[:year] = year
+
         
         
         track = find_spotify_details(number_one[:name])
@@ -120,10 +121,6 @@ def show
         track = RSpotify::Track.search(name)
     end
 
-    def make_song(song, birthday)
-        @song = birthday.songs.build(song)
-        @song.save
-    end
 
 
 
