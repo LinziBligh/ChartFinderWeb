@@ -30,9 +30,6 @@ def show
 
     BASE_PATH = "https://www.officialcharts.com/charts/singles-chart/"
 
-    def birthday_params
-      params .require(:birthday).permit(:date, :country, :songs)
-    end
 
     ##helper method to flip date and set chart
     def set_birthday
