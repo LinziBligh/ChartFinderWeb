@@ -21,8 +21,7 @@ def show
           end
         }
       new_birthday.save
-      @birthday = Birthday.find_by(date: @date)
-      render json: BirthdaySerializer.new(@birthday).to_serialized_json
+      render json: BirthdaySerializer.new(new_birthday).to_serialized_json
     end
   end
 
