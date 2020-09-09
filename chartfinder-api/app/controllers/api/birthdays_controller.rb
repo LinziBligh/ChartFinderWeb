@@ -1,4 +1,5 @@
 require "open-uri"
+include Helpers
 
 class Api::BirthdaysController < ApplicationController
   before_action :set_birthday, only: [:show]
@@ -25,34 +26,8 @@ class Api::BirthdaysController < ApplicationController
     end
   end
 
-  private
+  private 
 
-  BASE_PATH = "https://www.officialcharts.com/charts/singles-chart/"
-
-  ##helper method to flip date and set chart
-  def set_birthday
-    @date = params[:id].split("-").reverse.join("-")
-    @birthday = Birthday.find_by(date: @date)
-  end
-
-  ##helper method to return each year, from requested year to present year
-  def birthday_dates(dob)
-    anniversaries = []
-    start_date = dob.split("-")
-    this_year = Time.now.strftime("%Y").to_i
-
-    until start_date[2].to_i == this_year
-      anniversaries << start_date.join("-")
-      start_date[2] = start_date[2].to_i + 1
-    end
-    anniversaries
-  end
-
-  ##helper method to set date to work with url
-  def date_to_url(date)
-    adjusted_date = date.split("-").reverse.join("")
-    @url = BASE_PATH + adjusted_date
-  end
 
   def scrape(url, date)
     html = open(url)
@@ -78,7 +53,4 @@ class Api::BirthdaysController < ApplicationController
     number_one
   end
 
-  def find_spotify_details(name) #might need to improve this as some songs not correct, only searching title
-    track = RSpotify::Track.search(name)
-  end
 end

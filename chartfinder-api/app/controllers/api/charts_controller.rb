@@ -1,4 +1,5 @@
 require "open-uri"
+include Helpers
 
 class Api::ChartsController < ApplicationController
   before_action :set_chart, only: [:show]
@@ -19,19 +20,6 @@ class Api::ChartsController < ApplicationController
   private
 
   BASE_PATH = "https://www.officialcharts.com/charts/singles-chart/"
-
-  ##helper method to flip date and set chart
-  def set_chart
-    @date = params[:id]
-    @chart = Chart.where("DATE(?) BETWEEN start_date AND end_date", @date).first
-    @date = @date.split("-").reverse.join("-")
-  end
-
-  ##helper method to set date to work with url
-  def date_to_url(date)
-    adjusted_date = date.split("-").reverse.join("")
-    @url = BASE_PATH + adjusted_date
-  end
 
   def scrape(url, date)
     html = open(url)
@@ -67,9 +55,7 @@ class Api::ChartsController < ApplicationController
     @song_array
   end
 
-  def find_spotify_details(name)
-    track = RSpotify::Track.search(name)
-  end
+  
 
   def make_songs(songs, chart)
     songs.each do |song|
