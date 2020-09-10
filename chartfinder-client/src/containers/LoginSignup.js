@@ -6,8 +6,12 @@ class LoginSignup extends Component {
   render() {
     return (
       <div className="loginsignup">
-        <Link className='text-link' to="/signup">Sign Up</Link>
-        <Link className='text-link' to="/login">Log In</Link>
+        <Link className="text-link" to="/signup">
+          Sign Up
+        </Link>
+        <Link className="text-link" to="/login">
+          Log In
+        </Link>
       </div>
     );
   }

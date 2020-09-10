@@ -1,10 +1,14 @@
 import React, { Component } from "react";
-import { connect } from "react-redux"
-import store from '../store';
+import { connect } from "react-redux";
+import store from "../store";
 
 class DeleteChart extends Component {
   render() {
-    return <button className="text-link" onClick={() => this.handleClick()}>DELETE</button>;
+    return (
+      <button className="text-link" onClick={() => this.handleClick()}>
+        DELETE
+      </button>
+    );
   }
 
   handleClick = () => {
@@ -12,7 +16,11 @@ class DeleteChart extends Component {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        formData: { userId: this.props.user_id, chartId: this.props.chart_id, birthday: this.props.birthday },
+        formData: {
+          userId: this.props.user_id,
+          chartId: this.props.chart_id,
+          birthday: this.props.birthday,
+        },
       }),
     };
 
@@ -20,16 +28,15 @@ class DeleteChart extends Component {
       .then((response) => response.json())
       .then((user) => {
         this.props.removeChart(user);
-       updateLocalStorage();
+        updateLocalStorage();
       });
-  }}
-
-  function updateLocalStorage () {
-  localStorage.clear();
-  localStorage.setItem("state", JSON.stringify(store.getState()))
+  };
 }
 
-
+function updateLocalStorage() {
+  localStorage.clear();
+  localStorage.setItem("state", JSON.stringify(store.getState()));
+}
 
 const mapStateToProps = (state) => {
   return {
@@ -39,7 +46,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    removeChart: (user) => dispatch({ type: "REMOVE_CHART_FROM_USER", user: user }),
+    removeChart: (user) =>
+      dispatch({ type: "REMOVE_CHART_FROM_USER", user: user }),
   };
 };
 

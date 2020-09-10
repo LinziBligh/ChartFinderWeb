@@ -7,20 +7,15 @@ import LoginSignup from "./LoginSignup";
 import { connect } from "react-redux";
 import { fetchChart } from "../actions/fetchChart";
 import Dashboard from "./Dashboard";
-import SaveChart from "../components/SaveChart"
-import ReactLoading from 'react-loading'
-
-
-
+import SaveChart from "../components/SaveChart";
+import ReactLoading from "react-loading";
 
 class App extends Component {
- 
-  handleOnClick = ()=>{
-    alert("Logging Out")
+  handleOnClick = () => {
+    alert("Logging Out");
     localStorage.clear();
     window.location.reload();
-  }  
-
+  };
 
   render() {
     return (
@@ -28,34 +23,38 @@ class App extends Component {
         <h4>Introducing...</h4>
         <h1>CHARTFINDER</h1>
         <h3>Find the soundtrack to your life</h3>
-        
-        {this.props.loggedIn && 
-        <div>
-        <h2>Welcome back {this.props.user.username}!</h2>
-        <button className="loginsignup" onClick={()=>this.handleOnClick()}>Logout</button>
-        </div>}
 
-        {this.props.loggedIn ? <Dashboard />:<LoginSignup />}
-        
-        <DateForm />
-        
-        {this.props.requesting ? (
-          <div >
-          <h2>Generating......</h2>
-          <div className={"ReactLoading"}>
-          <ReactLoading  type={"bars"} color={"white"} />
+        {this.props.loggedIn && (
+          <div>
+            <h2>Welcome back {this.props.user.username}!</h2>
+            <button
+              className="loginsignup"
+              onClick={() => this.handleOnClick()}
+            >
+              Logout
+            </button>
           </div>
+        )}
+
+        {this.props.loggedIn ? <Dashboard /> : <LoginSignup />}
+
+        <DateForm />
+
+        {this.props.requesting ? (
+          <div>
+            <h2>Generating......</h2>
+            <div className={"ReactLoading"}>
+              <ReactLoading type={"bars"} color={"white"} />
+            </div>
           </div>
         ) : (
           <div>
-            <hr/>
+            <hr />
             <ChartContainer />
 
-            {this.props.loggedIn && 
-            <SaveChart />}
+            {this.props.loggedIn && <SaveChart />}
             <Playlist chart={this.props.chart} />
           </div>
-
         )}
       </div>
     );
@@ -67,7 +66,7 @@ const mapStateToProps = (state) => {
     requesting: state.charts.requesting,
     chart: state.charts.chart,
     loggedIn: state.charts.loggedIn,
-    user: state.charts.user
+    user: state.charts.user,
   };
 };
 

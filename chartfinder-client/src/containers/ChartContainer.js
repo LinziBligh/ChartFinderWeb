@@ -7,7 +7,7 @@ class ChartContainer extends Component {
   render() {
     return (
       <div className="ChartContainer">
-        <br/>
+        <br />
         <Date date={this.props.date} />
         <Chart />
       </div>

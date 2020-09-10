@@ -11,7 +11,11 @@ class SaveChart extends Component {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        formData: { userId: this.props.user_id, chartId: this.props.chart_id, birthday: this.props.birthday },
+        formData: {
+          userId: this.props.user_id,
+          chartId: this.props.chart_id,
+          birthday: this.props.birthday,
+        },
       }),
     };
 
@@ -19,7 +23,7 @@ class SaveChart extends Component {
       .then((response) => response.json())
       .then((user) => {
         this.props.addChart(user);
-        localStorage.clear()
+        localStorage.clear();
         localStorage.setItem("state", JSON.stringify(this.props.state));
       });
   };

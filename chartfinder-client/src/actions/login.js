@@ -19,9 +19,9 @@ export function login(formData) {
       })
 
       .then(history.push("/"))
-      .catch (error=> {alert("Sorry, we couldn't log you in, please sign up or try again");
-      window.location.reload()
-       })
-      
-  }
+      .catch((error) => {
+        alert("Sorry, we couldn't log you in, please sign up or try again");
+        window.location.reload();
+      });
+  };
 }

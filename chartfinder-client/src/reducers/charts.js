@@ -1,5 +1,4 @@
 
-
 function restoredOrDefaultState(){
   //messy, need to hide this default chart away somewhere in another file!
   const savedState = localStorage.getItem("state");

@@ -1,5 +1,5 @@
-import history from "../history"
-import store from '../store';
+import history from "../history";
+import store from "../store";
 
 export function signup(formData) {
   return (dispatch) => {
@@ -15,10 +15,9 @@ export function signup(formData) {
       .then((response) => response.json())
       .then((user) => {
         dispatch({ type: "ADD_USER", user });
-        localStorage.setItem("state", JSON.stringify(store.getState()))
+        localStorage.setItem("state", JSON.stringify(store.getState()));
       })
 
-      .then(history.push('/'))}
+      .then(history.push("/"));
+  };
 }
-
-
