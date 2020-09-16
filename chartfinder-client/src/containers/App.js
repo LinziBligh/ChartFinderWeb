@@ -5,7 +5,6 @@ import DateForm from "./DateForm";
 import Playlist from "../components/Playlist";
 import LoginSignup from "./LoginSignup";
 import { connect } from "react-redux";
-import { fetchChart } from "../actions/fetchChart";
 import Dashboard from "./Dashboard";
 import SaveChart from "../components/SaveChart";
 import ReactLoading from "react-loading";
@@ -70,10 +69,5 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    submitDate: (date) => dispatch(fetchChart(date)),
-  };
-};
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps)(App);
