@@ -3,7 +3,7 @@ import Song from "./Song";
 import Spotify from "./Spotify";
 
 class SongCard extends Component {
-  constructor() {
+  constructor(props) {
     super();
     this.state = {
       hover: false,

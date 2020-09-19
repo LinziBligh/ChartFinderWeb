@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { signup } from "../actions/signup";
 
 class Signup extends Component {
-  constructor() {
+  constructor(props) {
     super();
     this.state = {
       username: "",
